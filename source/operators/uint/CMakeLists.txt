@@ -1,0 +1,28 @@
+add_library(bit_region_uint_operator_type
+  bit_region_uint_operator_type.cpp
+  bit_region_uint_operator_type.hpp
+)
+target_link_libraries(bit_region_uint_operator_type
+)
+
+add_library(set_lhs_bits_are_subset_of_set_rhs_bits_type
+  set_lhs_bits_are_subset_of_set_rhs_bits_type.cpp
+  set_lhs_bits_are_subset_of_set_rhs_bits_type.hpp
+)
+target_link_libraries(set_lhs_bits_are_subset_of_set_rhs_bits_type
+  bit_region_uint_operator_type
+)
+
+add_executable(uint_operator_tests
+  set_lhs_bits_are_subset_of_set_rhs_bits_type_test.cpp
+  set_lhs_bits_are_subset_of_set_rhs_bits_type_test.hpp
+)
+target_link_libraries(uint_operator_tests
+  gtest_main
+  bit_region_schema_type
+  bit_region_type
+  bit_region_uint_operator_type
+
+  set_lhs_bits_are_subset_of_set_rhs_bits_type
+)
+gtest_discover_tests(uint_operator_tests)

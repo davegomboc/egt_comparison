@@ -1,0 +1,9 @@
+#!/bin/bash
+./prepare_repository_build_area egt_comparison c d
+./prepare_repository_build_area egt_comparison c r
+./prepare_repository_build_area egt_comparison c m
+./prepare_repository_build_area egt_comparison c w
+./prepare_repository_build_area egt_comparison g d
+./prepare_repository_build_area egt_comparison g r
+./prepare_repository_build_area egt_comparison g m
+./prepare_repository_build_area egt_comparison g w

@@ -1,0 +1,25 @@
+#!/bin/bash
+./build_bdd 3 KQ_vs_k none  4194304
+./build_bdd 3 KQ_vs_k restr 4194304
+./build_bdd 3 KQ_vs_k osm   4194304
+./build_bdd 3 KQ_vs_k tsm   4194304
+
+./build_bdd 3 KR_vs_k none  4194304
+./build_bdd 3 KR_vs_k restr 4194304
+./build_bdd 3 KR_vs_k osm   4194304
+./build_bdd 3 KR_vs_k tsm   4194304
+
+./build_bdd 3 KB_vs_k none  4194304
+./build_bdd 3 KB_vs_k restr 4194304
+./build_bdd 3 KB_vs_k osm   4194304
+./build_bdd 3 KB_vs_k tsm   4194304
+
+./build_bdd 3 KN_vs_k none  4194304
+./build_bdd 3 KN_vs_k restr 4194304
+./build_bdd 3 KN_vs_k osm   4194304
+./build_bdd 3 KN_vs_k tsm   4194304
+
+./build_bdd 3 KP_vs_k none  4194304
+./build_bdd 3 KP_vs_k restr 4194304
+./build_bdd 3 KP_vs_k osm   4194304
+./build_bdd 3 KP_vs_k tsm   4194304

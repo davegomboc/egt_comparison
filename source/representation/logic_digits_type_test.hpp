@@ -1,0 +1,9 @@
+#if !defined(EGT_COMPARISON_REPRESENTATION_LOGIC_DIGITS_TYPE_TEST_HPP)
+#define EGT_COMPARISON_REPRESENTATION_LOGIC_DIGITS_TYPE_TEST_HPP
+
+
+#include "gtest/gtest.h"
+#include "representation/logic_digits_type.hpp"
+
+
+#endif // EGT_COMPARISON_REPRESENTATION_LOGIC_DIGITS_TYPE_TEST_HPP

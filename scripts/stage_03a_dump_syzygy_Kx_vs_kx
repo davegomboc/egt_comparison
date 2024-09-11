@@ -1,0 +1,20 @@
+#!/bin/bash
+./dump_syzygy 4 KQ_vs_kq 2097152
+./dump_syzygy 4 KQ_vs_kr 2097152
+./dump_syzygy 4 KQ_vs_kb 2097152
+./dump_syzygy 4 KQ_vs_kn 2097152
+./dump_syzygy 4 KQ_vs_kp 2097152
+
+./dump_syzygy 4 KR_vs_kr 2097152
+./dump_syzygy 4 KR_vs_kb 2097152
+./dump_syzygy 4 KR_vs_kn 2097152
+./dump_syzygy 4 KR_vs_kp 2097152
+
+./dump_syzygy 4 KB_vs_kb 2097152
+./dump_syzygy 4 KB_vs_kn 2097152
+./dump_syzygy 4 KB_vs_kp 2097152
+
+./dump_syzygy 4 KN_vs_kn 2097152
+./dump_syzygy 4 KN_vs_kp 2097152
+
+./dump_syzygy 4 KP_vs_kp 2097152

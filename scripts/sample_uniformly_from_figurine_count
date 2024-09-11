@@ -1,0 +1,25 @@
+#!/bin/bash
+sbatch <<EOF
+#!/bin/bash
+#SBATCH --export="NONE"
+#SBATCH --job-name="sample_uniformly_from_$1-figurine_count_$2"
+#SBATCH --mem="2G"
+#SBATCH --mail-type="FAIL,INVALID_DEPEND,REQUEUE,STAGE_OUT,TIME_LIMIT"
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=1
+#SBATCH --requeue
+#SBATCH --time="12:00:00"
+#SBATCH --verbose
+#SBATCH --open-mode=truncate
+
+## crisgc.engr.ucr.edu
+##SBATCH --partition="batch"
+# cluster.hpcc.ucr.edu
+#SBATCH --partition="epyc"
+(
+TIMESTAMP=$(date '+%Y%m%dT%H%M%S%z')
+export TIMESTAMP
+ulimit -v 2097152
+singularity exec --env "EGT_PATH=${EGT_PATH},TB_PATH=${TB_PATH}" "${APPTAINER_IMAGE_DIR}/image.sif" "${BUILD_AREA_DIR}/source/sample_uniformly_from_egt_positions_main" $1 $2 > "${EGT_PATH}/sampled_positions/$1/$1-figurine_$2.epd" 2> "${EGT_PATH}/sampled_positions/$1/$1-figurine_$2.stderr"
+)
+EOF

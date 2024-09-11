@@ -1,0 +1,221 @@
+Bootstrap: scratch
+
+%labels
+    maintainer "Dave Gomboc <gomboc@cs.ucr.edu>"
+
+%setup
+    echo $APPTAINER_ROOTFS
+    debootstrap --arch=amd64 \
+    --include=ca-certificates,dialog,keyboard-configuration,lbzip2,less,nano,sudo,wget \
+    --variant=minbase --verbose bookworm \
+    $APPTAINER_ROOTFS http://ftp.us.debian.org/debian/
+    sudo LANG=C.UTF-8 chroot $APPTAINER_ROOTFS
+
+%post
+    export TERM=xterm-256color
+
+    # Set the system's default time zone.
+    rm /etc/localtime
+    ln -s /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
+
+    # Set up home directory symbolic link for crisgc.engr.ucr.edu.
+    # ln -s /home /home/csgrad
+
+    # Match Munge's and Slurm's UIDs and GIDs up with the host system, which is
+    # necessary for the mounted apptainer image to be compatible.
+    # cluster.hpcc.ucr.edu: no slurm user present, so just mimic the setup of munge
+    MUNGE_GID=495
+    MUNGE_UID=497
+    groupadd --gid $MUNGE_GID munge
+    useradd --home-dir /var/run/munge --gid $MUNGE_GID --no-create-home --no-user-group --shell /sbin/nologin --uid $MUNGE_UID munge
+
+    # crisgc.engr.ucr.edu: mimic the setup of both munge and slurm
+    #MUNGE_GID=993
+    #MUNGE_UID=996
+    #SLURM_GID=300
+    #SLURM_UID=300
+    #groupadd --gid $MUNGE_GID munge
+    #useradd --home-dir /var/run/munge --gid $MUNGE_GID --no-create-home --no-user-group --shell /sbin/nologin --uid $MUNGE_UID munge
+    #groupadd --gid $SLURM_GID slurm
+    #useradd --home-dir /nonexistent --gid $SLURM_GID --no-create-home --no-user-group --shell /sbin/nologin --uid $SLURM_UID slurm
+
+    # Match the Slurm version and layout that's installed on the host system.
+    # cluster.hpcc.ucr.edu
+    apt-get --assume-yes --fix-broken --fix-missing --verbose-versions install gcc libglib2.0-dev liblz4-dev libmunge-dev libreadline-dev libssl-dev make pkg-config python3-minimal zlib1g-dev
+    mkdir /run/munge
+
+    rm -rf --one-file-system /tmp/apptainer*.deb
+    wget --directory-prefix /tmp https://github.com/apptainer/apptainer/releases/download/v1.3.3/apptainer_1.3.3_amd64.deb
+    apt install -y /tmp/apptainer_1.3.3_amd64.deb
+
+    rm -rf --one-file-system /tmp/slurm-*.tar.bz2
+    # cluster.hpcc.ucr.edu is running v23.02.2 (exact match available)
+    wget --directory-prefix /tmp https://download.schedmd.com/slurm/slurm-23.02.2.tar.bz2
+    cd /tmp
+    tar xf /tmp/slurm-23.02.2.tar.bz2
+    cd /tmp/slurm-23.02.2
+    ./configure --prefix=/opt/slurm-23.02.2 --sysconfdir=/run/slurm --bindir=/usr/local/bin --sbindir=/usr/local/sbin --libdir=/usr/local/lib --includedir=/usr/local/include --datarootdir=/usr/local/share
+    # crisgc.engr.ucr.edu is running v21.08.0 (we can get very close)
+    # wget --directory-prefix /tmp https://download.schedmd.com/slurm/slurm-21.08.8-2.tar.bz2
+    # cd /tmp
+    # tar xf /tmp/slurm-21.08.8-2.tar.bz2
+    # cd /tmp/slurm-21.08.8-2
+    # ./configure --prefix=/opt/slurm-21.08.8-2 --sysconfdir=/etc/slurm --bindir=/usr/local/bin --sbindir=/usr/local/sbin --libdir=/usr/local/lib --includedir=/usr/local/include --datarootdir=/usr/local/share
+    make -j
+    make install
+
+    rm /etc/apt/sources.list
+    cat <<EOF > /etc/apt/sources.list
+deb http://ftp.us.debian.org/debian/ bookworm main contrib non-free
+deb-src http://ftp.us.debian.org/debian/ bookworm main contrib non-free
+EOF
+
+    rm /etc/apt/sources.list
+    cat <<EOF > /etc/apt/sources.list
+deb http://ftp.us.debian.org/debian/ bookworm main contrib non-free
+deb-src http://ftp.us.debian.org/debian/ bookworm main contrib non-free
+EOF
+
+    until
+    apt-get --assume-yes update
+    do
+        echo 'Waiting 10 seconds before attempting to retry.'
+        sleep 10
+    done
+
+    until
+    apt-get --assume-yes --fix-broken --fix-missing --verbose-versions dist-upgrade
+    do
+        echo 'Waiting 10 seconds before attempting to retry.'
+        sleep 10
+    done
+
+    until
+    apt-get --assume-yes --verbose-versions install \
+    apt-utils \
+    automake \
+    binutils-dev \
+    bison \
+    byobu \
+    bzip2 \
+    bzip2-doc \
+    cgdb \
+    chrpath \
+    clang \
+    cmake \
+    dbus-user-session \
+    diffuse \
+    emacs \
+    enscript \
+    flex \
+    g++-11-multilib \
+    g++-multilib \
+    gcc-11-doc \
+    gcc-doc \
+    gcc-11-locales \
+    gdb \
+    gdb-doc \
+    gdb-multiarch \
+    gdbserver \
+    git \
+    gitk \
+    gnupg \
+    google-perftools \
+    gzip \
+    htop \
+    hwloc \
+    iftop \
+    iproute2 \
+    iputils-ping \
+    iputils-tracepath \
+    libbz2-dev \
+    libc++1 \
+    libgoogle-perftools-dev \
+    liblzma-dev \
+    liblzma-doc \
+    libtbb-dev \
+    libtbb-doc \
+    libzstd-dev \
+    llvm \
+    man-db \
+    mtr \
+    net-tools \
+    ninja-build \
+    openssh-client \
+    parallel \
+    pbzip2 \
+    perl \
+    phalanx \
+    pigz \
+    pixz \
+    powerline \
+    python3-matplotlib \
+    python3-seaborn \
+    rr \
+    rsync \
+    scid \
+    screen \
+    socat \
+    source-highlight \
+    strace \
+    texinfo \
+    texlive-latex-extra \
+    texlive-science \
+    tmux \
+    toga2 \
+    traceroute \
+    valgrind \
+    xinit \
+    xvfb \
+    xz-utils \
+    zlib1g \
+    zlib1g-dev \
+    zstd \
+# (this line is intentionally here: don't remove it)
+    do
+        echo 'Waiting 10 seconds before attempting to retry.'
+        sleep 10
+    done
+
+    apt-get autoremove --purge --assume-yes --fix-broken --fix-missing --verbose-versions
+
+    mkdir -p /opt/llvm-git
+    rm -rf --one-file-system /tmp/gits/llvm-project
+    mkdir -p /tmp/gits/llvm-project/
+    cd /tmp/gits/llvm-project
+    git clone --depth 1 --branch llvmorg-18.1.8 https://github.com/llvm/llvm-project.git .
+    mkdir build
+    cmake -S llvm -B build -G Ninja -DLLVM_BINUTILS_INCDIR=/usr/include -DLLVM_ENABLE_PROJECTS="clang" -DLLVM_ENABLE_RUNTIMES="compiler-rt" -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -DCMAKE_INSTALL_PREFIX=/opt/llvm-git
+    ninja -C build
+    ninja -C build install
+#    cat <<EOF >> /etc/ld.so.conf.d/llvm-git.conf
+#/opt/llvm-git/lib/x86_64-unknown-linux-gnu
+#EOF
+
+    mkdir -p /opt/gcc-git
+    rm -rf --one-file-system /tmp/gits/gcc-git /tmp/gits/gcc-build
+    mkdir -p /tmp/gits/gcc-git /tmp/gits/gcc-build
+    git clone --depth 1 --branch releases/gcc-14.1.0 git://gcc.gnu.org/git/gcc.git /tmp/gits/gcc-git
+    cd /tmp/gits/gcc-git
+    contrib/download_prerequisites
+    cd /tmp/gits/gcc-build
+    ../gcc-git/configure --prefix=/opt/gcc-git --enable-languages=c,c++,lto
+    make -j8 bootstrap-lean
+    make install
+#    cat <<EOF >> /etc/ld.so.conf.d/gcc-git.conf
+#/opt/gcc-git/lib/gcc/x86_64-pc-linux-gnu
+#EOF
+
+%environment
+    LANG=C.UTF-8
+    LANGUAGE=C.UTF-8:en_CA.UTF-8:en_UK.UTF-8:en_US.UTF-8:en_CA:en_UK:en_US:fr_CA.UTF-8:fr_CA:fr
+    LC_ALL=C
+    PATH=/usr/games:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+    export LANG LANGAUGE LC_ALL PATH
+    APPTAINER_IMAGE_DIR="${APPTAINER_IMAGE_DIR:-${HOME}/apptainer_images}"
+    GIT_TOP_DIR="${GIT_TOP_DIR:-${HOME}/gits}"
+    EGT_DIR="${EGT_DIR:-${GIT_TOP_DIR}/egt_comparison/main/EGTs}"
+    SYZYGY_PATH="${SYZYGY_PATH:-${EGT_DIR}/syzygy/3:${EGT_DIR}/syzygy/4:${EGT_DIR}/syzygy/5}"
+    BUILD_AREA_DIR="${BUILD_AREA_DIR:-${GIT_TOP_DIR}/egt_comparison/build_areas/clang++-git-linux/Release}"
+    EXPERIMENT_OUTPUT_TOP_DIR="${EXPERIMENT_OUTPUT_TOP_DIR:-${GIT_TOP_DIR}/egt_comparison/main/experiments/2024-10_ECAI}"
+    export APPTAINER_IMAGE_DIR GIT_TOP_DIR EGT_DIR SYZYGY_PATH BUILD_AREA_DIR EXPERIMENT_OUTPUT_TOP_DIR

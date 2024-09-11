@@ -1,0 +1,2 @@
+#!/bin/bash
+./iclize 2 K_vs_k 2097152

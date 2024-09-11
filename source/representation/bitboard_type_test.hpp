@@ -1,0 +1,9 @@
+#if !defined(EGT_COMPARISON_REPRESENTATION_BITBOARD_TYPE_TEST_HPP)
+#define EGT_COMPARISON_REPRESENTATION_BITBOARD_TYPE_TEST_HPP
+
+
+#include "gtest/gtest.h"
+#include "representation/bitboard_type.hpp"
+
+
+#endif // EGT_COMPARISON_REPRESENTATION_BITBOARD_TYPE_TEST_HPP

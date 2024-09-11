@@ -1,0 +1,30 @@
+#!/bin/bash
+sbatch <<EOF
+#!/bin/bash
+#SBATCH --export="NONE"
+#SBATCH --job-name="dump_syzygy_wpr_$1_$2_$3K"
+#SBATCH --mem="$3K"
+#SBATCH --mail-type="FAIL,INVALID_DEPEND,REQUEUE,STAGE_OUT,TIME_LIMIT"
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=1
+#SBATCH --requeue
+#SBATCH --time="7-00:00:00"
+#SBATCH --verbose
+#SBATCH --open-mode=truncate
+
+## crisgc.engr.ucr.edu
+##SBATCH --partition="batch"
+# cluster.hpcc.ucr.edu
+#SBATCH --partition="epyc"
+# Only .rtbw should really be necessary for WCDBL probing, but
+# unfortunately, Fathom requires that .rtbz also be available.
+#
+# TODO: Avoid the undesirable security implications of piping
+# potentially unanticipated data into the shell.
+(
+TIMESTAMP=$(date '+%Y%m%dT%H%M%S%z')
+export TIMESTAMP
+ulimit -v $3
+singularity exec "${APPTAINER_IMAGE_DIR}/image.sif" "${BUILD_AREA_DIR}/source/syzygy_position_processor_main" --processor=probe_report_nybble_emitter --canonicalization=all_symmetries --perspective=white_player --postprocess=false $2 > "${EXPERIMENT_OUTPUT_TOP_DIR}/dump_syzygy/dump_syzygy_$1_$2_$3K.stdout" 2> "${EXPERIMENT_OUTPUT_TOP_DIR}/dump_syzygy/dump_syzygy_$1_$2_$3K.stderr"
+)
+EOF

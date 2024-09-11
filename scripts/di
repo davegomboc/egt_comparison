@@ -1,0 +1,20 @@
+#!/bin/bash
+sbatch <<EOF
+#!/bin/bash
+#SBATCH --export="NONE"
+#SBATCH --job-name="di_$1_$2_$3_$4_$5K"
+#SBATCH --mem="$5K"
+#SBATCH --mail-type="FAIL,INVALID_DEPEND,REQUEUE,STAGE_OUT,TIME_LIMIT"
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=1
+#SBATCH --requeue
+#SBATCH --time="14-00:00:00"
+#SBATCH --verbose
+#SBATCH --open-mode=truncate
+
+## crisgc.engr.ucr.edu
+##SBATCH --partition="batch"
+# cluster.hpcc.ucr.edu
+#SBATCH --partition="epyc"
+( ulimit -v $5; singularity exec "${APPTAINER_IMAGE_DIR}/image.sif" "${BUILD_AREA_DIR}/source/distance_d_merge_and_make_irredundant_main" $2 "$3" $4 > "${EXPERIMENT_OUTPUT_TOP_DIR}/di/$1_$2_$3_$4_$5K.stdout" 2> "${EXPERIMENT_OUTPUT_TOP_DIR}/di/$1_$2_$3_$4_$5K.stderr" )
+EOF

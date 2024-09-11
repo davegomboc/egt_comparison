@@ -1,0 +1,5 @@
+#!/bin/bash
+./build_bdd 2 K_vs_k none  4194304
+./build_bdd 2 K_vs_k restr 4194304
+./build_bdd 2 K_vs_k osm   4194304
+./build_bdd 2 K_vs_k tsm   4194304

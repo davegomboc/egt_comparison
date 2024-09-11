@@ -1,0 +1,20 @@
+#!/bin/bash
+./reduce 4 KQ_vs_kq D09I 09L 4194304
+./reduce 4 KQ_vs_kr D09I 09L 4194304
+./reduce 4 KQ_vs_kb D09I 09L 4194304
+./reduce 4 KQ_vs_kn D09I 09L 4194304
+./reduce 4 KQ_vs_kp D09I 09L 4194304
+
+./reduce 4 KR_vs_kr D09I 09L 4194304
+./reduce 4 KR_vs_kb D09I 09L 4194304
+./reduce 4 KR_vs_kn D09I 09L 4194304
+./reduce 4 KR_vs_kp D09I 09L 4194304
+
+./reduce 4 KB_vs_kb D09I 09L 4194304
+./reduce 4 KB_vs_kn D09I 09L 4194304
+./reduce 4 KB_vs_kp D09I 09L 4194304
+
+./reduce 4 KN_vs_kn D09I 09L 4194304
+./reduce 4 KN_vs_kp D09I 09L 4194304
+
+./reduce 4 KP_vs_kp D09I 09L 4194304

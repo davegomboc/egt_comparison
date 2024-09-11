@@ -1,0 +1,9 @@
+#if !defined(EGT_COMPARISON_REPRESENTATION_BOARD_8X8_TYPE_TEST_HPP)
+#define EGT_COMPARISON_REPRESENTATION_BOARD_8X8_TYPE_TEST_HPP
+
+
+#include "gtest/gtest.h"
+#include "representation/board_8x8_type.hpp"
+
+
+#endif // EGT_COMPARISON_REPRESENTATION_BOARD_8X8_TYPE_TEST_HPP

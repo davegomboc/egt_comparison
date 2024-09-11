@@ -1,0 +1,25 @@
+#!/bin/bash
+sbatch <<EOF
+#!/bin/bash
+#SBATCH --export="NONE"
+#SBATCH --job-name="sample_uniformly_from_material_signature_$1_$2_$3"
+#SBATCH --mem="2G"
+#SBATCH --mail-type="FAIL,INVALID_DEPEND,REQUEUE,STAGE_OUT,TIME_LIMIT"
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=1
+#SBATCH --requeue
+#SBATCH --time="1:00:00"
+#SBATCH --verbose
+#SBATCH --open-mode=truncate
+
+## crisgc.engr.ucr.edu
+##SBATCH --partition="batch"
+# cluster.hpcc.ucr.edu
+#SBATCH --partition="epyc"
+(
+TIMESTAMP=$(date '+%Y%m%dT%H%M%S%z')
+export TIMESTAMP
+ulimit -v 2097152
+singularity exec "${APPTAINER_IMAGE_DIR}/image.sif" "${BUILD_AREA_DIR}/source/sample_uniformly_from_material_signature_main" $2 $3 > "${EGT_DIR}/sampled_positions/$1/$2_$3.epd" 2> "${EGT_DIR}/sampled_positions/$1/$2_$3.stderr"
+)
+EOF

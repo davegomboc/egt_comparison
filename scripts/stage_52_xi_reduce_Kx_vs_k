@@ -1,0 +1,26 @@
+#!/bin/bash
+./reduce 3 KQ_vs_k 11L+X+I 11L+Q 4194304
+./reduce 3 KR_vs_k 08L+X+I 08L+Q 4194304
+./reduce 3 KB_vs_k 02L+X+I 02L+Q 4194304
+./reduce 3 KN_vs_k 02L+X+I 02L+Q 4194304
+./reduce 3 KP_vs_k 09L+X+I 09L+Q 4194304
+
+pushd ~/EGTs/2024-10_ECAI/cube_lists/3
+
+ln -s -T KR_vs_k_08L+Q.clst    KR_vs_k_11L+Q.clst
+ln -s -T KR_vs_k_08L+Q.clst.xz KR_vs_k_11L+Q.clst.xz
+ln -s -T KR_vs_k_08L+Q.icl     KR_vs_k_11L+Q.icl
+
+ln -s -T KB_vs_k_02L+Q.clst    KB_vs_k_11L+Q.clst
+ln -s -T KB_vs_k_02L+Q.clst.xz KB_vs_k_11L+Q.clst.xz
+ln -s -T KB_vs_k_02L+Q.icl     KB_vs_k_11L+Q.icl
+
+ln -s -T KN_vs_k_02L+Q.clst    KN_vs_k_11L+Q.clst
+ln -s -T KN_vs_k_02L+Q.clst.xz KN_vs_k_11L+Q.clst.xz
+ln -s -T KN_vs_k_02L+Q.icl     KN_vs_k_11L+Q.icl
+
+ln -s -T KP_vs_k_09L+Q.clst    KP_vs_k_11L+Q.clst
+ln -s -T KP_vs_k_09L+Q.clst.xz KP_vs_k_11L+Q.clst.xz
+ln -s -T KP_vs_k_09L+Q.icl     KP_vs_k_11L+Q.icl
+
+popd

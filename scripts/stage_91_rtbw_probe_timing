@@ -1,0 +1,31 @@
+#!/bin/bash
+sbatch <<"EOF"
+#!/bin/bash
+#SBATCH --export="NONE"
+#SBATCH --job-name="rtbw_probe_timing"
+#SBATCH --mail-type="FAIL,INVALID_DEPEND,REQUEUE,STAGE_OUT,TIME_LIMIT"
+#SBATCH --mail-user="gomboc@cs.ucr.edu"
+#SBATCH --nodes=1
+#SBATCH --requeue
+#SBATCH --time="1-00:00:00"
+#SBATCH --verbose
+#SBATCH --open-mode="truncate"
+
+# cluster.hpcc.ucr.edu -- make sure that we get an entire machine
+#SBATCH --partition="epyc"
+#SBATCH --cpus-per-task=256
+#SBATCH --mem=0  # all available memory
+# HPCC sysadmin says ${SCRATCH} points to local NVMe
+( \
+TIMESTAMP=$(date '+%Y%m%dT%H%M%S%z') ; \
+mkdir -p "${SCRATCH}/${TIMESTAMP}" ; \
+cp "${APPTAINER_IMAGE_DIR}/image.sif" "${SCRATCH}/${TIMESTAMP}/image.sif"; \
+# Only .rtbw should really be necessary for WCDBL probing, but
+# unfortunately, Fathom requires that .rtbz also be available.
+find "${EGT_PATH}/syzygy/3/" -name '*.rtb?' -printf "cp %h/%f ${SCRATCH}/${TIMESTAMP}/%f\n" | bash
+find "${EGT_PATH}/syzygy/4/" -name '*.rtb?' -printf "cp %h/%f ${SCRATCH}/${TIMESTAMP}/%f\n" | bash
+find "${EGT_PATH}/syzygy/5/" -name '*.rtb?' -printf "cp %h/%f ${SCRATCH}/${TIMESTAMP}/%f\n" | bash
+xzcat "${EGT_PATH}/sampled_positions/shuffled-345-figurine.epd.xz" > "${SCRATCH}/${TIMESTAMP}/shuffled-345-figurine.epd"; \
+singularity exec --env "TB_PATH=${SCRATCH}/${TIMESTAMP}" "${SCRATCH}/${TIMESTAMP}/image.sif" "${BUILD_AREA_DIR}/source/probe_timing_main" rtbw 5 < "${SCRATCH}/${TIMESTAMP}/shuffled-345-figurine.epd" > "${EXPERIMENT_OUTPUT_TOP_DIR}/probe_timings/hpcc/rtbw/${TIMESTAMP}.stdout" 2> "${EXPERIMENT_OUTPUT_TOP_DIR}/probe_timings/hpcc/rtbw/${TIMESTAMP}.stderr" \
+)
+EOF

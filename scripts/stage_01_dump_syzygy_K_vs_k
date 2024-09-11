@@ -1,0 +1,2 @@
+#!/bin/bash
+./dump_syzygy 2 K_vs_k 2097152

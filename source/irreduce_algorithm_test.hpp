@@ -1,0 +1,10 @@
+#ifndef EGT_COMPARISON_IRREDUCE_ALGORITHM_TEST_HPP
+#define EGT_COMPARISON_IRREDUCE_ALGORITHM_TEST_HPP
+
+
+#include "gtest/gtest.h"
+
+#include "irreduce_algorithm.hpp"
+
+
+#endif // EGT_COMPARISON_IRREDUCE_ALGORITHM_TEST_HPP

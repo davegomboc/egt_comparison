@@ -1,0 +1,1 @@
+#include "chesspresso_endgame_table_parameterized_testing_type.hpp"

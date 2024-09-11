@@ -1,0 +1,20 @@
+#!/bin/bash
+./di 4 KQ_vs_kq "" 09 4194304
+./di 4 KQ_vs_kr "" 09 4194304
+./di 4 KQ_vs_kb "" 09 4194304
+./di 4 KQ_vs_kn "" 09 4194304
+./di 4 KQ_vs_kp "" 09 4194304
+
+./di 4 KR_vs_kr "" 09 4194304
+./di 4 KR_vs_kb "" 09 4194304
+./di 4 KR_vs_kn "" 09 4194304
+./di 4 KR_vs_kp "" 09 4194304
+
+./di 4 KB_vs_kb "" 09 4194304
+./di 4 KB_vs_kn "" 09 4194304
+./di 4 KB_vs_kp "" 09 4194304
+
+./di 4 KN_vs_kn "" 09 4194304
+./di 4 KN_vs_kp "" 09 4194304
+
+./di 4 KP_vs_kp "" 09 4194304

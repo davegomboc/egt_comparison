@@ -1,0 +1,6 @@
+#!/bin/bash
+./d1merge KQ_vs_k 2097152
+./d1merge KR_vs_k 2097152
+./d1merge KB_vs_k 2097152
+./d1merge KN_vs_k 2097152
+./d1merge KP_vs_k 2097152

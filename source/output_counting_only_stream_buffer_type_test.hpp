@@ -1,0 +1,9 @@
+#if !defined(EGT_COMPARISON_OUTPUT_COUNTING_ONLY_STREAM_BUFFER_TYPE_TEST_HPP)
+#define EGT_COMPARISON_OUTPUT_COUNTING_ONLY_STREAM_BUFFER_TYPE_TEST_HPP
+
+
+#include "gtest/gtest.h"
+#include "output_counting_only_stream_buffer_type.hpp"
+
+
+#endif // EGT_COMPARISON_OUTPUT_COUNTING_ONLY_STREAM_BUFFER_TYPE_TEST_HPP

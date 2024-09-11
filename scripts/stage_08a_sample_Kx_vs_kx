@@ -1,0 +1,20 @@
+#!/bin/bash
+./sample_uniformly_from_material_signature 4 KQ_vs_kq 2000000
+./sample_uniformly_from_material_signature 4 KQ_vs_kr 2000000
+./sample_uniformly_from_material_signature 4 KQ_vs_kb 2000000
+./sample_uniformly_from_material_signature 4 KQ_vs_kn 2000000
+./sample_uniformly_from_material_signature 4 KQ_vs_kp 2000000
+
+./sample_uniformly_from_material_signature 4 KR_vs_kr 2000000
+./sample_uniformly_from_material_signature 4 KR_vs_kb 2000000
+./sample_uniformly_from_material_signature 4 KR_vs_kn 2000000
+./sample_uniformly_from_material_signature 4 KR_vs_kp 2000000
+
+./sample_uniformly_from_material_signature 4 KB_vs_kb 2000000
+./sample_uniformly_from_material_signature 4 KB_vs_kn 2000000
+./sample_uniformly_from_material_signature 4 KB_vs_kp 2000000
+
+./sample_uniformly_from_material_signature 4 KN_vs_kn 2000000
+./sample_uniformly_from_material_signature 4 KN_vs_kp 2000000
+
+./sample_uniformly_from_material_signature 4 KP_vs_kp 2000000

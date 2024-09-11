@@ -1,0 +1,9 @@
+#if !defined(EGT_COMPARISON_SET_LHS_BITS_ARE_SUBSET_OF_SET_RHS_BITS_TYPE_TEST_HPP)
+#define EGT_COMPARISON_SET_LHS_BITS_ARE_SUBSET_OF_SET_RHS_BITS_TYPE_TEST_HPP
+
+
+#include "gtest/gtest.h"
+#include "operators/uint/set_lhs_bits_are_subset_of_set_rhs_bits_type.hpp"
+
+
+#endif // EGT_COMPARISON_SET_LHS_BITS_ARE_SUBSET_OF_SET_RHS_BITS_TYPE_TEST_HPP

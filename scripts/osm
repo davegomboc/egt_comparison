@@ -1,0 +1,20 @@
+#!/bin/bash
+sbatch <<EOF
+#!/bin/bash
+#SBATCH --export="NONE"
+#SBATCH --job-name="osm_$1_$2_$3_$4K"
+#SBATCH --mem="$4K"
+#SBATCH --mail-type="FAIL,INVALID_DEPEND,REQUEUE,STAGE_OUT,TIME_LIMIT"
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=2
+#SBATCH --requeue
+#SBATCH --time="30-00:00:00"
+#SBATCH --verbose
+#SBATCH --open-mode=truncate
+
+## crisgc.engr.ucr.edu
+##SBATCH --partition="batch"
+# cluster.hpcc.ucr.edu
+#SBATCH --partition="epyc"
+( ulimit -v $4; singularity exec "${APPTAINER_IMAGE_DIR}/image.sif" "${BUILD_AREA_DIR}/source/one_shot_minimize_main" "$2" "$3" > "${EXPERIMENT_OUTPUT_TOP_DIR}/osm/$1_$2_$3_$4K.stdout" 2> "${EXPERIMENT_OUTPUT_TOP_DIR}/osm/$1_$2_$3_$4K.stderr" )
+EOF

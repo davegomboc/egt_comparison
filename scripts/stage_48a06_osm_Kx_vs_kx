@@ -1,0 +1,20 @@
+#!/bin/bash
+./osm 4 KQ_vs_kq 06L 16777216
+./osm 4 KQ_vs_kr 06L 16777216
+./osm 4 KQ_vs_kb 06L 16777216
+./osm 4 KQ_vs_kn 06L 16777216
+./osm 4 KQ_vs_kp 06L 16777216
+
+./osm 4 KR_vs_kr 06L 16777216
+./osm 4 KR_vs_kb 06L 16777216
+./osm 4 KR_vs_kn 06L 16777216
+./osm 4 KR_vs_kp 06L 16777216
+
+./osm 4 KB_vs_kb 06L 16777216
+./osm 4 KB_vs_kn 06L 16777216
+./osm 4 KB_vs_kp 06L 16777216
+
+./osm 4 KN_vs_kn 06L 16777216
+./osm 4 KN_vs_kp 06L 16777216
+
+./osm 4 KP_vs_kp 06L 16777216

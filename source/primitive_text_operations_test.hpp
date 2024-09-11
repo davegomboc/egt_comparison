@@ -1,0 +1,9 @@
+#if !defined(EGT_COMPARISON_PRIMITIVE_TEXT_OPERATIONS_TEST_HPP)
+#define EGT_COMPARISON_PRIMITIVE_TEXT_OPERATIONS_TEST_HPP
+
+
+#include "gtest/gtest.h"
+#include "primitive_text_operations.hpp"
+
+
+#endif // EGT_COMPARISON_PRIMITIVE_TEXT_OPERATIONS_TEST_HPP

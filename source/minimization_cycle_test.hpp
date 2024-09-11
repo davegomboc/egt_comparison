@@ -1,0 +1,10 @@
+#ifndef EGT_COMPARISON_MINIMIZATION_CYCLE_TEST_HPP
+#define EGT_COMPARISON_MINIMIZATION_CYCLE_TEST_HPP
+
+
+#include "gtest/gtest.h"
+
+#include "minimization_cycle.hpp"
+
+
+#endif // EGT_COMPARISON_MINIMIZATION_CYCLE_TEST_HPP

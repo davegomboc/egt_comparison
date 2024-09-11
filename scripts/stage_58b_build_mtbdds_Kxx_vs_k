@@ -1,0 +1,75 @@
+#!/bin/bash
+./build_bdd 4 KQQ_vs_k none  4194304
+./build_bdd 4 KQQ_vs_k restr 4194304
+./build_bdd 4 KQQ_vs_k osm   4194304
+./build_bdd 4 KQQ_vs_k tsm   4194304
+
+./build_bdd 4 KQR_vs_k none  4194304
+./build_bdd 4 KQR_vs_k restr 4194304
+./build_bdd 4 KQR_vs_k osm   4194304
+./build_bdd 4 KQR_vs_k tsm   4194304
+
+./build_bdd 4 KQB_vs_k none  4194304
+./build_bdd 4 KQB_vs_k restr 4194304
+./build_bdd 4 KQB_vs_k osm   4194304
+./build_bdd 4 KQB_vs_k tsm   4194304
+
+./build_bdd 4 KQN_vs_k none  4194304
+./build_bdd 4 KQN_vs_k restr 4194304
+./build_bdd 4 KQN_vs_k osm   4194304
+./build_bdd 4 KQN_vs_k tsm   4194304
+
+./build_bdd 4 KQP_vs_k none  4194304
+./build_bdd 4 KQP_vs_k restr 4194304
+./build_bdd 4 KQP_vs_k osm   4194304
+./build_bdd 4 KQP_vs_k tsm   4194304
+
+./build_bdd 4 KRR_vs_k none  4194304
+./build_bdd 4 KRR_vs_k restr 4194304
+./build_bdd 4 KRR_vs_k osm   4194304
+./build_bdd 4 KRR_vs_k tsm   4194304
+
+./build_bdd 4 KRB_vs_k none  4194304
+./build_bdd 4 KRB_vs_k restr 4194304
+./build_bdd 4 KRB_vs_k osm   4194304
+./build_bdd 4 KRB_vs_k tsm   4194304
+
+./build_bdd 4 KRN_vs_k none  4194304
+./build_bdd 4 KRN_vs_k restr 4194304
+./build_bdd 4 KRN_vs_k osm   4194304
+./build_bdd 4 KRN_vs_k tsm   4194304
+
+./build_bdd 4 KRP_vs_k none  4194304
+./build_bdd 4 KRP_vs_k restr 4194304
+./build_bdd 4 KRP_vs_k osm   4194304
+./build_bdd 4 KRP_vs_k tsm   4194304
+
+./build_bdd 4 KBB_vs_k none  4194304
+./build_bdd 4 KBB_vs_k restr 4194304
+./build_bdd 4 KBB_vs_k osm   4194304
+./build_bdd 4 KBB_vs_k tsm   4194304
+
+./build_bdd 4 KBN_vs_k none  4194304
+./build_bdd 4 KBN_vs_k restr 4194304
+./build_bdd 4 KBN_vs_k osm   4194304
+./build_bdd 4 KBN_vs_k tsm   4194304
+
+./build_bdd 4 KBP_vs_k none  4194304
+./build_bdd 4 KBP_vs_k restr 4194304
+./build_bdd 4 KBP_vs_k osm   4194304
+./build_bdd 4 KBP_vs_k tsm   4194304
+
+./build_bdd 4 KNN_vs_k none  4194304
+./build_bdd 4 KNN_vs_k restr 4194304
+./build_bdd 4 KNN_vs_k osm   4194304
+./build_bdd 4 KNN_vs_k tsm   4194304
+
+./build_bdd 4 KNP_vs_k none  4194304
+./build_bdd 4 KNP_vs_k restr 4194304
+./build_bdd 4 KNP_vs_k osm   4194304
+./build_bdd 4 KNP_vs_k tsm   4194304
+
+./build_bdd 4 KPP_vs_k none  4194304
+./build_bdd 4 KPP_vs_k restr 4194304
+./build_bdd 4 KPP_vs_k osm   4194304
+./build_bdd 4 KPP_vs_k tsm   4194304

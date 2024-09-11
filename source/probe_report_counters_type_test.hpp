@@ -1,0 +1,10 @@
+#if !defined(EGT_COMPARISON_PROBE_REPORT_COUNTERS_TYPE_TEST_HPP)
+#define EGT_COMPARISON_PROBE_REPORT_COUNTERS_TYPE_TEST_HPP
+
+
+#include "gtest/gtest.h"
+
+#include "probe_report_counters_type.hpp"
+
+
+#endif // EGT_COMPARISON_PROBE_REPORT_COUNTERS_TYPE_TEST_HPP

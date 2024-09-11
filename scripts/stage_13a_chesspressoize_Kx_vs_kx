@@ -1,0 +1,20 @@
+#!/bin/bash
+./chesspressoize 4 3 KQ_vs_kq 4194304
+./chesspressoize 4 3 KQ_vs_kr 4194304
+./chesspressoize 4 3 KQ_vs_kb 4194304
+./chesspressoize 4 3 KQ_vs_kn 4194304
+./chesspressoize 4 3 KQ_vs_kp 4194304
+
+./chesspressoize 4 3 KR_vs_kr 4194304
+./chesspressoize 4 3 KR_vs_kb 4194304
+./chesspressoize 4 3 KR_vs_kn 4194304
+./chesspressoize 4 3 KR_vs_kp 4194304
+
+./chesspressoize 4 3 KB_vs_kb 4194304
+./chesspressoize 4 3 KB_vs_kn 4194304
+./chesspressoize 4 3 KB_vs_kp 4194304
+
+./chesspressoize 4 3 KN_vs_kn 4194304
+./chesspressoize 4 3 KN_vs_kp 4194304
+
+./chesspressoize 4 3 KP_vs_kp 4194304

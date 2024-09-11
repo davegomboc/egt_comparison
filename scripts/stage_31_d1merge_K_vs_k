@@ -1,0 +1,2 @@
+#!/bin/bash
+./d1merge K_vs_k 2097152

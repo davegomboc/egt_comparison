@@ -1,0 +1,9 @@
+#if !defined(EGT_COMPARISON_REPRESENTATION_FIGURINE_TYPE_TEST_HPP)
+#define EGT_COMPARISON_REPRESENTATION_FIGURINE_TYPE_TEST_HPP
+
+
+#include "gtest/gtest.h"
+#include "representation/figurine_type.hpp"
+
+
+#endif // EGT_COMPARISON_REPRESENTATION_LOGIC_DIGITS_TYPE_TEST_HPP

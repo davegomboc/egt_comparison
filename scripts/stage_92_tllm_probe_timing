@@ -1,0 +1,33 @@
+#!/bin/bash
+sbatch <<"EOF"
+#!/bin/bash
+#SBATCH --export="NONE"
+#SBATCH --job-name="tllm_probe_timing"
+#SBATCH --mail-type="FAIL,INVALID_DEPEND,REQUEUE,STAGE_OUT,TIME_LIMIT"
+#SBATCH --mail-user="gomboc@cs.ucr.edu"
+#SBATCH --nodes=1
+#SBATCH --requeue
+#SBATCH --time="1-00:00:00"
+#SBATCH --verbose
+#SBATCH --open-mode="truncate"
+
+# cluster.hpcc.ucr.edu -- make sure that we get an entire machine
+#SBATCH --partition="epyc"
+#SBATCH --cpus-per-task=256
+#SBATCH --mem=0  # all available memory
+# HPCC sysadmin says ${SCRATCH} points to local NVMe
+( \
+TIMESTAMP=$(date '+%Y%m%dT%H%M%S%z') ; \
+mkdir -p "${SCRATCH}/${TIMESTAMP}/cube_lists/2" ; \
+mkdir -p "${SCRATCH}/${TIMESTAMP}/cube_lists/3" ; \
+mkdir -p "${SCRATCH}/${TIMESTAMP}/cube_lists/4" ; \
+mkdir -p "${SCRATCH}/${TIMESTAMP}/cube_lists/5" ; \
+cp "${APPTAINER_IMAGE_DIR}/image.sif" "${SCRATCH}/${TIMESTAMP}/image.sif"; \
+cp "${EGT_PATH}/cube_lists/2/"*_03L+Q.icl "${SCRATCH}/${TIMESTAMP}/cube_lists/2" ; \
+cp "${EGT_PATH}/cube_lists/3/"*_11L+Q.icl "${SCRATCH}/${TIMESTAMP}/cube_lists/3" ; \
+cp "${EGT_PATH}/cube_lists/4/"*_09L+Q.icl "${SCRATCH}/${TIMESTAMP}/cube_lists/4" ; \
+cp "${EGT_PATH}/cube_lists/5/"*_05L+Q.icl "${SCRATCH}/${TIMESTAMP}/cube_lists/5" ; \
+xzcat "${EGT_PATH}/sampled_positions/shuffled-345-figurine.epd.xz" > "${SCRATCH}/${TIMESTAMP}/shuffled-345-figurine.epd"; \
+singularity exec "${SCRATCH}/${TIMESTAMP}/image.sif" "${BUILD_AREA_DIR}/source/probe_timing_main" icl 5 < "${SCRATCH}/${TIMESTAMP}/shuffled-345-figurine.epd" > "${EXPERIMENT_OUTPUT_TOP_DIR}/probe_timings/hpcc/tllm/${TIMESTAMP}.stdout" 2> "${EXPERIMENT_OUTPUT_TOP_DIR}/probe_timings/hpcc/tllm/${TIMESTAMP}.stderr" \
+)
+EOF

@@ -1,0 +1,9 @@
+#if !defined(EGT_COMPARISON_INDEXED_CUBE_LIST_ENDGAME_TABLE_TYPE_TEST_HPP)
+#define EGT_COMPARISON_INDEXED_CUBE_LIST_ENDGAME_TABLE_TYPE_TEST_HPP
+
+
+#include "gtest/gtest.h"
+#include "indexed_cube_list_endgame_table_type.hpp"
+
+
+#endif // EGT_COMPARISON_INDEXED_CUBE_LIST_ENDGAME_TABLE_TYPE_TEST_HPP

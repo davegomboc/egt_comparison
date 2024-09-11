@@ -1,0 +1,9 @@
+#if !defined(EGT_COMPARISON_PROBE_REPORT_NYBBLE_ENDGAME_TABLE_TYPE_TEST_HPP)
+#define EGT_COMPARISON_PROBE_REPORT_NYBBLE_ENDGAME_TABLE_TYPE_TEST_HPP
+
+
+#include "gtest/gtest.h"
+#include "probe_report_nybble_endgame_table_type.hpp"
+
+
+#endif // EGT_COMPARISON_PROBE_REPORT_NYBBLE_ENDGAME_TABLE_TYPE_TEST_HPP

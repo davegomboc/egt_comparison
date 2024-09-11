@@ -1,0 +1,75 @@
+#!/bin/bash
+
+echo_usage() {
+    echo "$0 <repository> <compiler> <cmake_build_type>"
+    echo "    where repository in (egt_comparison)"
+    echo "    where compiler in (c|g)"
+    echo "    where cmake_build_type in (d|m|w|r)"
+    exit
+}
+
+: "${GIT_TOP_DIR:?GIT_TOP_DIR must be set and non-empty.}"
+if [[ ! -d "${GIT_TOP_DIR}" ]]; then
+    echo "There is no GIT_TOP_DIR directory at ${GIT_TOP_DIR}."
+    exit
+fi
+
+if [[ "$#" -ne 3 ]]; then
+    echo_usage
+fi
+
+: "$1:?The first argument must specify the Git repository.}"
+REPOSITORY="$1"
+case "${REPOSITORY}" in
+    "egt_comparison")
+        ;;
+    *)
+        echo "Invalid git repository specified."
+        echo_usage
+        ;;
+esac
+if [[ ! -d "${GIT_TOP_DIR}/${REPOSITORY}" ]]; then
+    echo "REPOSITORY ${REPOSITORY} within ${GIT_TOP_DIR} does not exist."
+    exit
+fi
+
+: "$2:?The second argument must specify the compiler portion of the toolchain file.}"
+case "$2" in
+    c*)
+        COMPILER="clang++-git-linux"
+        ;;
+    g*)
+        COMPILER="g++-git-linux"
+        ;;
+    *)
+        echo "Invalid compiler specified."
+        echo_usage
+        ;;
+esac
+
+: "$3:?The third argument must specify the CMAKE_BUILD_TYPE.}"
+case "$3" in
+    d*)
+        CMAKE_BUILD_TYPE="Debug"
+        ;;
+    m*)
+        CMAKE_BUILD_TYPE="MinSizeRel"
+        ;;
+    w*)
+        CMAKE_BUILD_TYPE="RelWithDebInfo"
+        ;;
+    r*)
+        CMAKE_BUILD_TYPE="Release"
+        ;;
+    *)
+        echo "Invalid CMake build type specified."
+        echo_usage
+        ;;
+esac
+
+pushd "${GIT_TOP_DIR}/${REPOSITORY}" > /dev/null
+mkdir -p "build_areas/${COMPILER}/${CMAKE_BUILD_TYPE}"
+rm -rf --one-file-system build_areas/${COMPILER}/${CMAKE_BUILD_TYPE}/* build_areas/${COMPILER}/${CMAKE_BUILD_TYPE}/.*
+cd "build_areas/${COMPILER}/${CMAKE_BUILD_TYPE}"
+cmake "-DGIT_TOP_DIR=${GIT_TOP_DIR}" "-DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}" "-DCMAKE_TOOLCHAIN_FILE=${GIT_TOP_DIR}/egt_comparison/main/toolchains/Toolchain.${COMPILER}.cmake" -GNinja "${GIT_TOP_DIR}/${REPOSITORY}/main"
+popd > /dev/null

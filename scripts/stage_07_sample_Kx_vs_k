@@ -1,0 +1,6 @@
+#!/bin/bash
+./sample_uniformly_from_material_signature 3 KQ_vs_k 2000000
+./sample_uniformly_from_material_signature 3 KR_vs_k 2000000
+./sample_uniformly_from_material_signature 3 KB_vs_k 2000000
+./sample_uniformly_from_material_signature 3 KN_vs_k 2000000
+./sample_uniformly_from_material_signature 3 KP_vs_k 2000000

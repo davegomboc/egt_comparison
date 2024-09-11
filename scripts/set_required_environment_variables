@@ -1,0 +1,12 @@
+APPTAINER_IMAGE_DIR="${HOME}/apptainer_images"
+export APPTAINER_IMAGE_DIR
+GIT_TOP_DIR="${HOME}/gits"
+export GIT_TOP_DIR
+EGT_DIR="${GIT_TOP_DIR}/egt_comparison/main/EGTs"
+export EGT_DIR
+SYZYGY_PATH="${EGT_DIR}/syzygy/3:${EGT_DIR}/syzygy/4:${EGT_DIR}/syzygy/5"
+export SYZYGY_PATH
+BUILD_AREA_DIR="${GIT_TOP_DIR}/egt_comparison/build_areas/clang++-git-linux/Release"
+export BUILD_AREA_DIR
+EXPERIMENT_OUTPUT_TOP_DIR="${GIT_TOP_DIR}/egt_comparison/main/experiments/2024-10_ECAI"
+export EXPERIMENT_OUTPUT_TOP_DIR

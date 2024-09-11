@@ -1,0 +1,200 @@
+#!/bin/bash
+./build_bdd 5 KBB_vs_kb none  33554432
+./build_bdd 5 KBB_vs_kb restr 33554432
+./build_bdd 5 KBB_vs_kb osm   33554432
+./build_bdd 5 KBB_vs_kb tsm   33554432
+
+./build_bdd 5 KBB_vs_kn none  33554432
+./build_bdd 5 KBB_vs_kn restr 33554432
+./build_bdd 5 KBB_vs_kn osm   33554432
+./build_bdd 5 KBB_vs_kn tsm   33554432
+
+./build_bdd 5 KBB_vs_kq none  33554432
+./build_bdd 5 KBB_vs_kq restr 33554432
+./build_bdd 5 KBB_vs_kq osm   33554432
+./build_bdd 5 KBB_vs_kq tsm   33554432
+
+./build_bdd 5 KBB_vs_kr none  33554432
+./build_bdd 5 KBB_vs_kr restr 33554432
+./build_bdd 5 KBB_vs_kr osm   33554432
+./build_bdd 5 KBB_vs_kr tsm   33554432
+
+./build_bdd 5 KBN_vs_kb none  33554432
+./build_bdd 5 KBN_vs_kb restr 33554432
+./build_bdd 5 KBN_vs_kb osm   33554432
+./build_bdd 5 KBN_vs_kb tsm   33554432
+
+./build_bdd 5 KBN_vs_kn none  33554432
+./build_bdd 5 KBN_vs_kn restr 33554432
+./build_bdd 5 KBN_vs_kn osm   33554432
+./build_bdd 5 KBN_vs_kn tsm   33554432
+
+./build_bdd 5 KBN_vs_kq none  33554432
+./build_bdd 5 KBN_vs_kq restr 33554432
+./build_bdd 5 KBN_vs_kq osm   33554432
+./build_bdd 5 KBN_vs_kq tsm   33554432
+
+./build_bdd 5 KBN_vs_kr none  33554432
+./build_bdd 5 KBN_vs_kr restr 33554432
+./build_bdd 5 KBN_vs_kr osm   33554432
+./build_bdd 5 KBN_vs_kr tsm   33554432
+
+./build_bdd 5 KNN_vs_kb none  33554432
+./build_bdd 5 KNN_vs_kb restr 33554432
+./build_bdd 5 KNN_vs_kb osm   33554432
+./build_bdd 5 KNN_vs_kb tsm   33554432
+
+./build_bdd 5 KNN_vs_kn none  33554432
+./build_bdd 5 KNN_vs_kn restr 33554432
+./build_bdd 5 KNN_vs_kn osm   33554432
+./build_bdd 5 KNN_vs_kn tsm   33554432
+
+./build_bdd 5 KNN_vs_kq none  33554432
+./build_bdd 5 KNN_vs_kq restr 33554432
+./build_bdd 5 KNN_vs_kq osm   33554432
+./build_bdd 5 KNN_vs_kq tsm   33554432
+
+./build_bdd 5 KNN_vs_kr none  33554432
+./build_bdd 5 KNN_vs_kr restr 33554432
+./build_bdd 5 KNN_vs_kr osm   33554432
+./build_bdd 5 KNN_vs_kr tsm   33554432
+
+./build_bdd 5 KQB_vs_kb none  33554432
+./build_bdd 5 KQB_vs_kb restr 33554432
+./build_bdd 5 KQB_vs_kb osm   33554432
+./build_bdd 5 KQB_vs_kb tsm   33554432
+
+./build_bdd 5 KQB_vs_kn none  33554432
+./build_bdd 5 KQB_vs_kn restr 33554432
+./build_bdd 5 KQB_vs_kn osm   33554432
+./build_bdd 5 KQB_vs_kn tsm   33554432
+
+./build_bdd 5 KQB_vs_kq none  33554432
+./build_bdd 5 KQB_vs_kq restr 33554432
+./build_bdd 5 KQB_vs_kq osm   33554432
+./build_bdd 5 KQB_vs_kq tsm   33554432
+
+./build_bdd 5 KQB_vs_kr none  33554432
+./build_bdd 5 KQB_vs_kr restr 33554432
+./build_bdd 5 KQB_vs_kr osm   33554432
+./build_bdd 5 KQB_vs_kr tsm   33554432
+
+./build_bdd 5 KQN_vs_kb none  33554432
+./build_bdd 5 KQN_vs_kb restr 33554432
+./build_bdd 5 KQN_vs_kb osm   33554432
+./build_bdd 5 KQN_vs_kb tsm   33554432
+
+./build_bdd 5 KQN_vs_kn none  33554432
+./build_bdd 5 KQN_vs_kn restr 33554432
+./build_bdd 5 KQN_vs_kn osm   33554432
+./build_bdd 5 KQN_vs_kn tsm   33554432
+
+./build_bdd 5 KQN_vs_kq none  33554432
+./build_bdd 5 KQN_vs_kq restr 33554432
+./build_bdd 5 KQN_vs_kq osm   33554432
+./build_bdd 5 KQN_vs_kq tsm   33554432
+
+./build_bdd 5 KQN_vs_kr none  33554432
+./build_bdd 5 KQN_vs_kr restr 33554432
+./build_bdd 5 KQN_vs_kr osm   33554432
+./build_bdd 5 KQN_vs_kr tsm   33554432
+
+./build_bdd 5 KQQ_vs_kb none  33554432
+./build_bdd 5 KQQ_vs_kb restr 33554432
+./build_bdd 5 KQQ_vs_kb osm   33554432
+./build_bdd 5 KQQ_vs_kb tsm   33554432
+
+./build_bdd 5 KQQ_vs_kn none  33554432
+./build_bdd 5 KQQ_vs_kn restr 33554432
+./build_bdd 5 KQQ_vs_kn osm   33554432
+./build_bdd 5 KQQ_vs_kn tsm   33554432
+
+./build_bdd 5 KQQ_vs_kq none  33554432
+./build_bdd 5 KQQ_vs_kq restr 33554432
+./build_bdd 5 KQQ_vs_kq osm   33554432
+./build_bdd 5 KQQ_vs_kq tsm   33554432
+
+./build_bdd 5 KQQ_vs_kr none  33554432
+./build_bdd 5 KQQ_vs_kr restr 33554432
+./build_bdd 5 KQQ_vs_kr osm   33554432
+./build_bdd 5 KQQ_vs_kr tsm   33554432
+
+./build_bdd 5 KQR_vs_kb none  33554432
+./build_bdd 5 KQR_vs_kb restr 33554432
+./build_bdd 5 KQR_vs_kb osm   33554432
+./build_bdd 5 KQR_vs_kb tsm   33554432
+
+./build_bdd 5 KQR_vs_kn none  33554432
+./build_bdd 5 KQR_vs_kn restr 33554432
+./build_bdd 5 KQR_vs_kn osm   33554432
+./build_bdd 5 KQR_vs_kn tsm   33554432
+
+./build_bdd 5 KQR_vs_kq none  33554432
+./build_bdd 5 KQR_vs_kq restr 33554432
+./build_bdd 5 KQR_vs_kq osm   33554432
+./build_bdd 5 KQR_vs_kq tsm   33554432
+
+./build_bdd 5 KQR_vs_kr none  33554432
+./build_bdd 5 KQR_vs_kr restr 33554432
+./build_bdd 5 KQR_vs_kr osm   33554432
+./build_bdd 5 KQR_vs_kr tsm   33554432
+
+./build_bdd 5 KRB_vs_kb none  33554432
+./build_bdd 5 KRB_vs_kb restr 33554432
+./build_bdd 5 KRB_vs_kb osm   33554432
+./build_bdd 5 KRB_vs_kb tsm   33554432
+
+./build_bdd 5 KRB_vs_kn none  33554432
+./build_bdd 5 KRB_vs_kn restr 33554432
+./build_bdd 5 KRB_vs_kn osm   33554432
+./build_bdd 5 KRB_vs_kn tsm   33554432
+
+./build_bdd 5 KRB_vs_kq none  33554432
+./build_bdd 5 KRB_vs_kq restr 33554432
+./build_bdd 5 KRB_vs_kq osm   33554432
+./build_bdd 5 KRB_vs_kq tsm   33554432
+
+./build_bdd 5 KRB_vs_kr none  33554432
+./build_bdd 5 KRB_vs_kr restr 33554432
+./build_bdd 5 KRB_vs_kr osm   33554432
+./build_bdd 5 KRB_vs_kr tsm   33554432
+
+./build_bdd 5 KRN_vs_kb none  33554432
+./build_bdd 5 KRN_vs_kb restr 33554432
+./build_bdd 5 KRN_vs_kb osm   33554432
+./build_bdd 5 KRN_vs_kb tsm   33554432
+
+./build_bdd 5 KRN_vs_kn none  33554432
+./build_bdd 5 KRN_vs_kn restr 33554432
+./build_bdd 5 KRN_vs_kn osm   33554432
+./build_bdd 5 KRN_vs_kn tsm   33554432
+
+./build_bdd 5 KRN_vs_kq none  33554432
+./build_bdd 5 KRN_vs_kq restr 33554432
+./build_bdd 5 KRN_vs_kq osm   33554432
+./build_bdd 5 KRN_vs_kq tsm   33554432
+
+./build_bdd 5 KRN_vs_kr none  33554432
+./build_bdd 5 KRN_vs_kr restr 33554432
+./build_bdd 5 KRN_vs_kr osm   33554432
+./build_bdd 5 KRN_vs_kr tsm   33554432
+
+./build_bdd 5 KRR_vs_kb none  33554432
+./build_bdd 5 KRR_vs_kb restr 33554432
+./build_bdd 5 KRR_vs_kb osm   33554432
+./build_bdd 5 KRR_vs_kb tsm   33554432
+
+./build_bdd 5 KRR_vs_kn none  33554432
+./build_bdd 5 KRR_vs_kn restr 33554432
+./build_bdd 5 KRR_vs_kn osm   33554432
+./build_bdd 5 KRR_vs_kn tsm   33554432
+
+./build_bdd 5 KRR_vs_kq none  33554432
+./build_bdd 5 KRR_vs_kq restr 33554432
+./build_bdd 5 KRR_vs_kq osm   33554432
+./build_bdd 5 KRR_vs_kq tsm   33554432
+
+./build_bdd 5 KRR_vs_kr none  33554432
+./build_bdd 5 KRR_vs_kr restr 33554432
+./build_bdd 5 KRR_vs_kr osm   33554432
+./build_bdd 5 KRR_vs_kr tsm   33554432

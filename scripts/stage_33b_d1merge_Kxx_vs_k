@@ -1,0 +1,20 @@
+#!/bin/bash
+./d1merge KQQ_vs_k 4194304
+./d1merge KQR_vs_k 4194304
+./d1merge KQB_vs_k 4194304
+./d1merge KQN_vs_k 4194304
+./d1merge KQP_vs_k 4194304
+
+./d1merge KRR_vs_k 4194304
+./d1merge KRB_vs_k 4194304
+./d1merge KRN_vs_k 4194304
+./d1merge KRP_vs_k 4194304
+
+./d1merge KBB_vs_k 4194304
+./d1merge KBN_vs_k 4194304
+./d1merge KBP_vs_k 4194304
+
+./d1merge KNN_vs_k 4194304
+./d1merge KNP_vs_k 4194304
+
+./d1merge KPP_vs_k 4194304

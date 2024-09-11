@@ -1,0 +1,6 @@
+#!/bin/bash
+./chesspressoize 3 3 KQ_vs_k 2097152
+./chesspressoize 3 3 KR_vs_k 2097152
+./chesspressoize 3 3 KB_vs_k 2097152
+./chesspressoize 3 3 KN_vs_k 2097152
+./chesspressoize 3 3 KP_vs_k 2097152

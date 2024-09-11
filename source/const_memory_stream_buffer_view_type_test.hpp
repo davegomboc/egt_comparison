@@ -1,0 +1,9 @@
+#if !defined(EGT_COMPARISON_CONST_MEMORY_STREAM_BUFFER_VIEW_TYPE_TEST_HPP)
+#define EGT_COMPARISON_CONST_MEMORY_STREAM_BUFFER_VIEW_TYPE_TEST_HPP
+
+
+#include "gtest/gtest.h"
+#include "const_memory_stream_buffer_view_type.hpp"
+
+
+#endif // EGT_COMPARISON_CONST_MEMORY_STREAM_BUFFER_VIEW_TYPE_TEST_HPP

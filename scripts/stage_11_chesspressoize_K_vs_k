@@ -1,0 +1,2 @@
+#!/bin/bash
+./chesspressoize 2 3 K_vs_k 2097152

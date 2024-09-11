@@ -1,0 +1,1343 @@
+add_subdirectory(bdd_from_bits)
+add_subdirectory(epd)
+add_subdirectory(operators/uint)
+add_subdirectory(representation)
+
+add_library(argument_parsing
+  argument_parsing.cpp
+  argument_parsing.hpp
+)
+target_link_libraries(argument_parsing
+  representation
+)
+
+add_library(assert_fail SHARED
+  assert_fail.cpp
+  assert_fail.hpp
+)
+target_link_libraries(assert_fail
+  stack_trace
+)
+
+add_library(atomic_stuff
+  atomic_stuff.cpp
+  atomic_stuff.hpp
+)
+target_link_libraries(atomic_stuff
+  parallel_for_each
+)
+
+add_library(bdd_endgame_table_parameterized_testing_type
+  bdd_endgame_table_parameterized_testing_type.cpp
+  bdd_endgame_table_parameterized_testing_type.hpp
+)
+target_link_libraries(bdd_endgame_table_parameterized_testing_type
+  gtest_main
+  fen_position_wcdbl_verification_type
+  bdd_endgame_table_type
+  probe_report_type
+  representation
+)
+
+add_library(bdd_endgame_table_type
+  bdd_endgame_table_type.cpp
+  bdd_endgame_table_type.hpp
+)
+target_link_libraries(bdd_endgame_table_type
+  board_generation_helpers
+  endgame_table_type
+  fixed_decision_diagram_type
+  paths
+  probe_report_type
+)
+
+add_library(binary_stream_io
+  binary_stream_io.cpp
+  binary_stream_io.hpp
+)
+target_link_libraries(binary_stream_io
+)
+
+add_library(bit_array_display
+  bit_array_display.cpp
+  bit_array_display.hpp
+)
+target_link_libraries(bit_array_display
+  bit_indexing_and_sizing
+)
+
+add_library(bit_indexing_and_sizing
+  bit_indexing_and_sizing.cpp
+  bit_indexing_and_sizing.hpp
+)
+target_link_libraries(bit_indexing_and_sizing
+  primitive_bit_operations
+)
+
+add_library(bit_region_type
+  bit_region_type.cpp
+  bit_region_type.hpp
+)
+target_link_libraries(bit_region_type
+  binary_stream_io
+)
+
+add_library(bit_region_schema_type
+  bit_region_schema_type.cpp
+  bit_region_schema_type.hpp
+)
+target_link_libraries(bit_region_schema_type
+)
+
+add_library(bit_region_uint_operators
+  bit_region_uint_operators.cpp
+  bit_region_uint_operators.hpp
+)
+target_link_libraries(bit_region_uint_operators
+)
+
+add_library(bit_stuff
+  bit_stuff.cpp
+  bit_stuff.hpp
+)
+target_link_libraries(bit_stuff
+)
+
+add_library(board_generation_helpers
+  board_generation_helpers.cpp
+  board_generation_helpers.hpp
+)
+target_link_libraries(board_generation_helpers
+  representation
+  status_board_entry_type
+)
+
+add_library(chesspresso_endgame_table_generator_type
+  chesspresso_endgame_table_generator_type.cpp
+  chesspresso_endgame_table_generator_type.hpp
+)
+target_link_libraries(chesspresso_endgame_table_generator_type
+  chesspresso_endgame_table_type
+  probe_report_nybble_processor_type
+  probe_report_type
+  representation
+)
+
+add_library(chesspresso_endgame_table_parameterized_testing_type
+  chesspresso_endgame_table_parameterized_testing_type.cpp
+  chesspresso_endgame_table_parameterized_testing_type.hpp
+)
+target_link_libraries(chesspresso_endgame_table_parameterized_testing_type
+  gtest_main
+  fen_position_wcdbl_verification_type
+  chesspresso_endgame_table_type
+  probe_report_type
+  representation
+)
+
+add_library(chesspresso_endgame_table_type
+  chesspresso_endgame_table_type.cpp
+  chesspresso_endgame_table_type.hpp
+)
+target_link_libraries(chesspresso_endgame_table_type
+  bit_region_schema_type
+  endgame_table_type
+  paths
+  probe_report_type
+  representation
+  unxz
+)
+
+add_library(chesspresso_probe_timing_epd_parsing
+  chesspresso_probe_timing_epd_parsing.cpp
+  chesspresso_probe_timing_epd_parsing.hpp
+)
+target_link_libraries(chesspresso_probe_timing_epd_parsing
+  representation
+)
+
+add_library(const_memory_stream_buffer_view_type
+  const_memory_stream_buffer_view_type.cpp
+  const_memory_stream_buffer_view_type.hpp
+)
+target_link_libraries(const_memory_stream_buffer_view_type
+)
+
+add_library(cube
+  cube.cpp
+  cube.hpp
+)
+target_link_libraries(cube
+  cube_binary_inputs
+  uint_type_selection
+)
+
+add_library(cube_binary_inputs
+  cube_binary_inputs.cpp
+  cube_binary_inputs.hpp
+)
+target_link_libraries(cube_binary_inputs
+  bit_stuff
+  logic_digit_enum
+  integer_logarithms
+  uint_type_selection
+)
+
+add_library(cube_list
+  cube_list.cpp
+  cube_list.hpp
+)
+target_link_libraries(cube_list
+  cube
+  cube_binary_inputs
+)
+
+add_library(cube_list_endgame_table_parameterized_testing_type
+  cube_list_endgame_table_parameterized_testing_type.cpp
+  cube_list_endgame_table_parameterized_testing_type.hpp
+)
+target_link_libraries(cube_list_endgame_table_parameterized_testing_type
+  gtest_main
+  fen_position_wcdbl_verification_type
+  cube_list_endgame_table_type
+  probe_report_type
+  representation
+)
+
+add_library(cube_list_endgame_table_type
+  cube_list_endgame_table_type.cpp
+  cube_list_endgame_table_type.hpp
+)
+target_link_libraries(cube_list_endgame_table_type
+  bit_region_schema_type
+  board_generation_helpers
+  endgame_table_type
+  probe_report_type
+  representation
+  unxz
+)
+
+add_library(data_category_enum
+  data_category_enum.cpp
+  data_category_enum.hpp
+)
+target_link_libraries(data_category_enum
+)
+
+add_library(decision_dag_endgame_table_parameterized_testing_type
+  decision_dag_endgame_table_parameterized_testing_type.cpp
+  decision_dag_endgame_table_parameterized_testing_type.hpp
+)
+target_link_libraries(decision_dag_endgame_table_parameterized_testing_type
+  gtest_main
+  fen_position_wcdbl_verification_type
+  decision_dag_endgame_table_type
+  probe_report_type
+  representation
+)
+
+add_library(decision_dag_endgame_table_type
+  decision_dag_endgame_table_type.cpp
+  decision_dag_endgame_table_type.hpp
+)
+target_link_libraries(decision_dag_endgame_table_type
+  bit_region_schema_type
+  endgame_table_type
+  paths
+  probe_report_type
+  representation
+  unxz
+)
+
+add_library(default_init_type
+  default_init_type.cpp
+  default_init_type.hpp
+)
+target_link_libraries(default_init_type
+)
+
+add_library(distance_d_merging
+  distance_d_merging.cpp
+  distance_d_merging.hpp
+)
+target_link_libraries(distance_d_merging
+  cube_list
+  uint_type_selection
+)
+
+add_library(decision_dag
+  decision_dag.cpp
+  decision_dag.hpp
+)
+target_link_libraries(decision_dag
+  cube_binary_inputs
+  cube_list
+  hash_combine
+  integer_logarithms
+  parallel_for_each
+  uint_type_selection
+)
+
+add_library(egt_format_type
+  egt_format_type.cpp
+  egt_format_type.hpp
+)
+target_link_libraries(egt_format_type
+)
+
+add_library(endgame_table_type
+  endgame_table_type.cpp
+  endgame_table_type.hpp
+)
+target_link_libraries(endgame_table_type
+)
+
+add_library(endgame_tables_type
+  endgame_tables_type.cpp
+  endgame_tables_type.hpp
+)
+target_link_libraries(endgame_tables_type
+  bdd_endgame_table_type
+  chesspresso_endgame_table_type
+  cube_list_endgame_table_type
+  decision_dag_endgame_table_type
+  egt_format_type
+  endgame_table_type
+  indexed_cube_list_endgame_table_type
+  probe_report_nybble_endgame_table_type
+  representation
+)
+
+add_library(environment_variable_access
+  environment_variable_access.cpp
+  environment_variable_access.hpp
+)
+target_link_libraries(environment_variable_access
+)
+
+add_library(execution_measurement
+  execution_measurement.cpp
+  execution_measurement.hpp
+)
+target_link_libraries(execution_measurement
+)
+
+add_library(exercise_atomic_access
+  exercise_atomic_access.c
+  exercise_atomic_access.h
+)
+target_link_libraries(exercise_atomic_access
+)
+
+add_library(expand_randomly
+  expand_randomly.cpp
+  expand_randomly.hpp
+)
+target_link_libraries(expand_randomly
+  cube_list
+  indexed_cube_list
+)
+
+add_library(expand_randomly_parameterized_testing_type
+  expand_randomly_parameterized_testing_type.cpp
+  expand_randomly_parameterized_testing_type.hpp
+)
+target_link_libraries(expand_randomly_parameterized_testing_type
+  gtest_main
+  cube_list
+  filesystem_stuff
+  indexed_cube_list
+  verify_equivalence
+)
+
+add_library(fen_position_wcdbl_verification_type
+  fen_position_wcdbl_verification_type.cpp
+  fen_position_wcdbl_verification_type.hpp
+)
+target_link_libraries(fen_position_wcdbl_verification_type
+  probe_report_type
+)
+
+add_library(filesystem_stuff
+  filesystem_stuff.cpp
+  filesystem_stuff.hpp
+)
+target_link_libraries(filesystem_stuff
+  data_category_enum
+)
+
+add_library(generic_probe_timing
+  generic_probe_timing.cpp
+  generic_probe_timing.hpp
+)
+target_link_libraries(
+  extended_position_description_type
+  primitive_bit_operations
+  primitive_text_operations
+  probing_summary_statistics_type
+)
+
+add_library(generic_tree
+  generic_tree.cpp
+  generic_tree.hpp
+)
+target_link_libraries(generic_tree
+  tree_of_bits
+)
+
+add_library(hash_combine
+  hash_combine.cpp
+  hash_combine.hpp
+)
+target_link_libraries(hash_combine
+)
+
+add_library(hex_display
+  hex_display.cpp
+  hex_display.hpp
+)
+target_link_libraries(hex_display
+)
+
+add_library(indexed_cube_list
+  indexed_cube_list.cpp
+  indexed_cube_list.hpp
+)
+target_link_libraries(indexed_cube_list
+  bit_stuff
+  cube_binary_inputs
+  cube_list
+  generic_tree
+  logic_digit_enum
+  uint_type_selection
+)
+
+add_library(indexed_cube_list_endgame_table_type
+  indexed_cube_list_endgame_table_type.cpp
+  indexed_cube_list_endgame_table_type.hpp
+)
+target_link_libraries(indexed_cube_list_endgame_table_type
+  bit_region_schema_type
+  board_generation_helpers
+  endgame_table_type
+  probe_report_type
+  representation
+  unxz
+)
+
+add_library(initialize_with
+  initialize_with.cpp
+  initialize_with.hpp
+)
+target_link_libraries(initialize_with
+)
+
+add_library(integer_logarithms
+  integer_logarithms.cpp
+  integer_logarithms.hpp
+)
+target_link_libraries(integer_logarithms
+)
+
+add_library(integer_priority_queue
+  integer_priority_queue.cpp
+  integer_priority_queue.hpp
+)
+target_link_libraries(integer_priority_queue
+)
+
+add_library(irreduce_algorithm
+  irreduce_algorithm.cpp
+  irreduce_algorithm.hpp
+)
+target_link_libraries(irreduce_algorithm
+  atomic_stuff
+  cube_list
+  indexed_cube_list
+  integer_priority_queue
+  parallel_for_each
+  synchronized_shuffle
+  verify_equivalence
+)
+
+add_library(load_and_save
+  load_and_save.cpp
+  load_and_save.hpp
+)
+target_link_libraries(load_and_save
+  cube_list
+  data_category_enum
+  decision_dag
+  filesystem_stuff
+  uint_type_selection
+)
+
+add_library(logic_digit_enum
+  logic_digit_enum.cpp
+  logic_digit_enum.hpp
+)
+target_link_libraries(logic_digit_enum
+)
+
+add_library(look_up_parameterized_testing_type
+  look_up_parameterized_testing_type.cpp
+  look_up_parameterized_testing_type.hpp
+)
+target_link_libraries(look_up_parameterized_testing_type
+  gtest_main
+  cube_list
+  filesystem_stuff
+  indexed_cube_list
+)
+
+add_library(make_decision_dag
+  make_decision_dag.cpp
+  make_decision_dag.hpp
+)
+target_link_libraries(make_decision_dag
+  decision_dag
+  load_and_save
+)
+
+add_library(memory_information_snapshot_type
+  memory_information_snapshot_type.cpp
+  memory_information_snapshot_type.hpp
+)
+target_link_libraries(memory_information_snapshot_type
+  const_memory_stream_buffer_view_type
+  default_init_type
+  primitive_text_operations
+)
+
+add_library(memory_information_snapshotter_type
+  memory_information_snapshotter_type.cpp
+  memory_information_snapshotter_type.hpp
+)
+target_link_libraries(memory_information_snapshotter_type
+  memory_information_snapshot_type
+)
+
+add_library(memory_mapped_file_type
+  memory_mapped_file_type.cpp
+  memory_mapped_file_type.hpp
+)
+target_link_libraries(memory_mapped_file_type
+)
+
+add_library(minimization_cycle
+  minimization_cycle.cpp
+  minimization_cycle.hpp
+)
+target_link_libraries(minimization_cycle
+  cube_list
+  expand_randomly
+  indexed_cube_list
+  irreduce_algorithm
+)
+
+add_library(minimization_cycle_parameterized_testing_type
+  minimization_cycle_parameterized_testing_type.cpp
+  minimization_cycle_parameterized_testing_type.hpp
+)
+target_link_libraries(minimization_cycle_parameterized_testing_type
+  gtest_main
+  cube_list
+  filesystem_stuff
+  indexed_cube_list
+  minimization_cycle
+  verify_equivalence
+)
+
+add_library(mutable_memory_stream_buffer_view_type
+  mutable_memory_stream_buffer_view_type.cpp
+  mutable_memory_stream_buffer_view_type.hpp
+)
+target_link_libraries(mutable_memory_stream_buffer_view_type
+)
+
+add_library(output_counting_only_stream_buffer_type
+  output_counting_only_stream_buffer_type.cpp
+  output_counting_only_stream_buffer_type.hpp
+)
+target_link_libraries(output_counting_only_stream_buffer_type
+)
+
+add_library(parallel_for_each
+  parallel_for_each.cpp
+  parallel_for_each.hpp
+)
+target_link_libraries(parallel_for_each
+)
+
+add_library(paths
+  paths.cpp
+  paths.hpp
+)
+target_link_libraries(paths
+  environment_variable_access
+  representation
+)
+
+add_library(position_sampling_type
+  position_sampling_type.cpp
+  position_sampling_type.hpp
+)
+target_link_libraries(position_sampling_type
+  query_egt
+  representation
+)
+
+add_library(primitive_bit_operations
+  primitive_bit_operations.hpp
+  primitive_bit_operations.cpp
+)
+target_link_libraries(primitive_bit_operations
+)
+
+add_library(primitive_text_operations
+  primitive_text_operations.hpp
+  primitive_text_operations.cpp
+)
+target_link_libraries(primitive_text_operations
+)
+
+add_library(probe_report_counters_type
+  probe_report_counters_type.cpp
+  probe_report_counters_type.hpp
+)
+target_link_libraries(probe_report_counters_type
+  probe_report_enum
+  probe_report_type
+)
+
+add_library(probe_report_counting_type
+  probe_report_counting_type.cpp
+  probe_report_counting_type.hpp
+)
+target_link_libraries(probe_report_counting_type
+  probe_report_counters_type
+  probe_report_type
+)
+
+add_library(probe_report_nybble_emitter_type
+  probe_report_nybble_emitter_type.cpp
+  probe_report_nybble_emitter_type.hpp
+)
+target_link_libraries(probe_report_nybble_emitter_type
+  paths
+  probe_report_type
+  representation
+  syzygy_position_processor_type
+)
+
+add_library(probe_report_nybble_endgame_table_parameterized_testing_type
+  probe_report_nybble_endgame_table_parameterized_testing_type.cpp
+  probe_report_nybble_endgame_table_parameterized_testing_type.hpp
+)
+target_link_libraries(probe_report_nybble_endgame_table_parameterized_testing_type
+  gtest_main
+  fen_position_wcdbl_verification_type
+  probe_report_nybble_endgame_table_type
+  probe_report_type
+  representation
+)
+
+add_library(probe_report_nybble_endgame_table_type
+  probe_report_nybble_endgame_table_type.cpp
+  probe_report_nybble_endgame_table_type.hpp
+)
+target_link_libraries(probe_report_nybble_endgame_table_type
+  endgame_table_type
+  paths
+  probe_report_enum
+  probe_report_type
+  representation
+)
+
+add_library(probe_report_nybble_processor_debugger_type
+  probe_report_nybble_processor_debugger_type.cpp
+  probe_report_nybble_processor_debugger_type.hpp
+)
+target_link_libraries(probe_report_nybble_processor_debugger_type
+  probe_report_nybble_processor_type
+  representation
+)
+
+add_library(probe_report_nybble_processor_enum
+  probe_report_nybble_processor_enum.cpp
+  probe_report_nybble_processor_enum.hpp
+)
+target_link_libraries(probe_report_nybble_processor_enum
+)
+
+add_library(probe_report_nybble_processor_factory_type
+  probe_report_nybble_processor_factory_type.cpp
+  probe_report_nybble_processor_factory_type.hpp
+)
+target_link_libraries(probe_report_nybble_processor_factory_type
+  chesspresso_endgame_table_generator_type
+  probe_report_nybble_processor_debugger_type
+  probe_report_nybble_processor_enum
+  representation
+)
+
+add_library(probe_report_nybble_processor_type
+  probe_report_nybble_processor_type.cpp
+  probe_report_nybble_processor_type.hpp
+)
+target_link_libraries(probe_report_nybble_processor_type
+  paths
+  probe_report_nybble_endgame_table_type
+  probe_report_type
+  representation
+  unxz
+)
+
+add_library(probe_timing
+  probe_timing.cpp
+  probe_timing.hpp
+)
+target_link_libraries(probe_timing
+  chesspresso_probe_timing_epd_parsing
+  execution_measurement
+  extended_position_description_type
+  memory_information_snapshotter_type
+  primitive_bit_operations
+  probe_report_type
+  probe_timing_epd_parsing
+  probing
+  probing_summary_statistics_type
+  representation
+)
+
+add_library(probe_timing_epd_parsing
+  probe_timing_epd_parsing.cpp
+  probe_timing_epd_parsing.hpp
+)
+target_link_libraries(probe_timing_epd_parsing
+  probe_report_type
+  tb_position_type
+)
+
+add_library(probe_timings_board
+  probe_timings_board.cpp
+  probe_timings_board.hpp
+)
+target_link_libraries(probe_timings_board
+  egt_format_type
+  extended_position_description_type
+  generic_probe_timing
+  probe_timing
+  representation
+  unxz
+)
+
+add_library(probing_summary_statistics_type
+  probing_summary_statistics_type.cpp
+  probing_summary_statistics_type.hpp
+)
+target_link_libraries(probing_summary_statistics_type
+)
+
+add_library(query_egt
+  query_egt.cpp
+  query_egt.hpp
+)
+target_link_libraries(query_egt
+  probe_report_type
+  prober_type
+  tb_position_type
+)
+
+add_library(stack_trace STATIC
+  stack_trace.cpp
+  stack_trace.hpp
+)
+set_property(TARGET stack_trace PROPERTY POSITION_INDEPENDENT_CODE TRUE)
+target_compile_definitions(stack_trace PRIVATE
+  UNW_LOCAL_ONLY
+)
+target_link_libraries(stack_trace
+  unwind
+)
+
+add_library(status_board_entry_type
+  status_board_entry_type.cpp
+  status_board_entry_type.hpp
+)
+target_link_libraries(status_board_entry_type
+  chesspresso_endgame_table_type
+  egt_format_type
+  fixed_decision_diagram_type
+  load_and_save
+  paths
+  representation
+)
+
+add_library(synchronized_shuffle
+  synchronized_shuffle.cpp
+  synchronized_shuffle.hpp
+)
+target_link_libraries(synchronized_shuffle
+)
+
+add_library(syzygy_position_processor_debugger_type
+  syzygy_position_processor_debugger_type.cpp
+  syzygy_position_processor_debugger_type.hpp
+)
+target_link_libraries(syzygy_position_processor_debugger_type
+  representation
+  syzygy_position_processor_type
+)
+
+add_library(syzygy_position_processor_enum
+  syzygy_position_processor_enum.cpp
+  syzygy_position_processor_enum.hpp
+)
+target_link_libraries(syzygy_position_processor_enum
+)
+
+add_library(syzygy_position_processor_factory_type
+  syzygy_position_processor_factory_type.cpp
+  syzygy_position_processor_factory_type.hpp
+)
+target_link_libraries(syzygy_position_processor_factory_type
+  probe_report_nybble_emitter_type
+  syzygy_position_processor_debugger_type
+  syzygy_position_processor_enum
+)
+
+add_library(syzygy_position_processor_type
+  syzygy_position_processor_type.cpp
+  syzygy_position_processor_type.hpp
+)
+target_link_libraries(syzygy_position_processor_type
+  paths
+  probe_report_counting_type
+  query_egt
+  representation
+)
+
+add_library(syzygy_probe_timing
+  syzygy_probe_timing.cpp
+  syzygy_probe_timing.hpp
+)
+target_link_libraries(syzygy_probe_timing
+  extended_position_description_type
+  generic_probe_timing
+  memory_information_snapshotter_type
+  primitive_bit_operations
+  probe_report_type
+  probe_timing_epd_parsing
+  probing
+)
+
+add_library(tree_of_bits
+  tree_of_bits.cpp
+  tree_of_bits.hpp
+)
+target_link_libraries(tree_of_bits
+  bit_stuff
+  uint_type_selection
+)
+
+add_library(uint_type_selection
+  uint_type_selection.cpp
+  uint_type_selection.hpp
+)
+target_link_libraries(uint_type_selection
+)
+
+add_library(unxz
+  unxz.cpp
+  unxz.hpp
+)
+target_link_libraries(unxz
+  lzma
+  memory_mapped_file_type
+)
+
+add_library(verify_equivalence
+  verify_equivalence.cpp
+  verify_equivalence.hpp
+)
+target_link_libraries(verify_equivalence
+  cube_list
+  indexed_cube_list
+  parallel_for_each
+)
+
+add_executable(binarize_F_main
+  binarize_F_main.cpp
+)
+target_link_libraries(binarize_F_main
+  const_memory_stream_buffer_view_type
+  unxz
+  representation
+)
+
+add_executable(check_generic_tree_main
+  check_generic_tree_main.cpp
+)
+target_link_libraries(check_generic_tree_main
+  generic_tree
+)
+
+add_executable(convert_chesspresso_to_pla_main
+  convert_chesspresso_to_pla_main.cpp
+)
+target_link_libraries(convert_chesspresso_to_pla_main
+  chesspresso_endgame_table_type
+)
+
+add_executable(convert_main
+  convert_main.cpp
+)
+target_link_libraries(convert_main
+  cube_list
+  data_category_enum
+  decision_dag
+  indexed_cube_list
+  load_and_save
+)
+
+add_executable(dearchive_unmerged_cube_list_main
+  dearchive_unmerged_cube_list_main.cpp
+)
+target_link_libraries(dearchive_unmerged_cube_list_main
+  cube_list
+  filesystem_stuff
+  load_and_save
+)
+
+add_executable(distance_d_merge_and_make_irredundant_main
+  distance_d_merge_and_make_irredundant_main.cpp
+)
+target_link_libraries(distance_d_merge_and_make_irredundant_main
+  cube_list
+  distance_d_merging
+  indexed_cube_list
+  irreduce_algorithm
+)
+
+add_executable(dump_cube_list_main
+  dump_cube_list_main.cpp
+  dump_cube_list_main.hpp
+)
+target_link_libraries(dump_cube_list_main
+  cube_list
+)
+
+add_executable(dump_environment_variables_main
+  dump_environment_variables_main.cpp
+  dump_environment_variables_main.hpp
+)
+target_link_libraries(dump_environment_variables_main
+  environment_variable_access
+)
+
+add_executable(exercise_transform_reduce_main
+  exercise_transform_reduce_main.cpp
+)
+target_link_libraries(exercise_transform_reduce_main
+  execution_measurement
+)
+
+add_executable(expand_by_distance_d_merging_main
+  expand_by_distance_d_merging_main.cpp
+)
+target_link_libraries(expand_by_distance_d_merging_main
+  cube_list
+  distance_d_merging
+  indexed_cube_list
+)
+
+add_executable(export_to_chesspresso_F_plb_main
+  export_to_chesspresso_F_plb_main.cpp
+)
+target_link_libraries(
+  cube_list
+  filesystem_stuff
+  load_and_save
+)
+
+add_executable(export_to_chesspresso_FR_plb_main
+  export_to_chesspresso_FR_plb_main.cpp
+)
+target_link_libraries(
+  cube_list
+  filesystem_stuff
+  load_and_save
+)
+
+add_executable(generate_distance_one_cube_lists_main
+  generate_distance_one_cube_lists_main.cpp
+  generate_distance_one_cube_lists_main.hpp
+)
+target_link_libraries(generate_distance_one_cube_lists_main
+  cube_list
+  distance_d_merging
+  filesystem_stuff
+  indexed_cube_list
+  irreduce_algorithm
+  representation
+)
+
+add_executable(generate_material_signatures_main
+  generate_material_signatures_main.cpp
+  generate_material_signatures_main.hpp
+)
+target_link_libraries(generate_material_signatures_main
+  representation
+)
+
+add_executable(generate_probe_timings_board_main
+  generate_probe_timings_board_main.cpp
+  generate_probe_timings_board_main.hpp
+)
+target_link_libraries(generate_probe_timings_board_main
+  probe_timings_board
+)
+
+add_executable(generate_source_file_from_binary_data
+  generate_source_file_from_binary_data.cpp
+)
+target_link_libraries(generate_source_file_from_binary_data
+  memory_mapped_file_type
+)
+
+add_executable(generate_status_board_main
+  generate_status_board_main.cpp
+  generate_status_board_main.hpp
+)
+target_link_libraries(generate_status_board_main
+  board_generation_helpers
+  representation
+  status_board_entry_type
+)
+
+add_executable(get_stats_main
+  get_stats_main.cpp
+)
+target_link_libraries(
+  cube_list
+  data_category_enum
+  decision_dag
+  indexed_cube_list
+  load_and_save
+)
+
+add_executable(make_decision_dag_main
+  make_decision_dag_main.cpp
+)
+target_link_libraries(make_decision_dag_main
+  decision_dag
+  load_and_save
+  make_decision_dag
+)
+
+add_executable(make_irredundant_main
+  make_irredundant_main.cpp
+)
+target_link_libraries(make_irredundant_main
+  cube_list
+  indexed_cube_list
+  irreduce_algorithm
+)
+
+add_executable(make_irredundant_and_reduce_main
+  make_irredundant_and_reduce_main.cpp
+)
+target_link_libraries(make_irredundant_and_reduce_main
+  cube_list
+  indexed_cube_list
+  irreduce_algorithm
+)
+
+add_executable(one_shot_minimize_main
+  one_shot_minimize_main.cpp
+  one_shot_minimize_main.hpp
+)
+target_link_libraries(one_shot_minimize_main
+  cube_list
+  filesystem_stuff
+  indexed_cube_list
+  minimization_cycle
+)
+
+add_executable(probe_timing_main
+  probe_timing_main.cpp
+  probe_timing_main.hpp
+)
+target_link_libraries(probe_timing_main
+  egt_format_type
+  endgame_tables_type
+  extended_position_description_type
+  generic_probe_timing
+  memory_information_snapshotter_type
+  probe_timing
+  probe_timing_epd_parsing
+  probing
+  syzygy_probe_timing
+)
+
+add_executable(probe_report_nybble_processor_main
+  probe_report_nybble_processor_main.cpp
+  probe_report_nybble_processor_main.hpp
+)
+target_link_libraries(probe_report_nybble_processor_main
+  argument_parsing
+  probe_report_nybble_processor_enum
+  probe_report_nybble_processor_factory_type
+  probe_report_nybble_processor_type
+  representation
+)
+
+add_executable(reduce_main
+  reduce_main.cpp
+)
+target_link_libraries(reduce_main
+  cube_list
+  indexed_cube_list
+  irreduce_algorithm
+)
+
+add_executable(sample_uniformly_from_egt_positions_main
+  sample_uniformly_from_egt_positions_main.cpp
+)
+target_link_libraries(sample_uniformly_from_egt_positions_main
+  position_sampling_type
+)
+
+add_executable(sample_uniformly_from_material_signature_main
+  sample_uniformly_from_material_signature_main.cpp
+)
+target_link_libraries(sample_uniformly_from_material_signature_main
+  position_sampling_type
+)
+
+add_executable(sort_cube_list_main
+  sort_cube_list_main.cpp
+)
+target_link_libraries(sort_cube_list_main
+  cube_list
+  filesystem_stuff
+)
+
+add_executable(syzygy_position_processor_main
+  syzygy_position_processor_main.cpp
+  syzygy_position_processor_main.hpp
+)
+target_link_libraries(syzygy_position_processor_main
+  argument_parsing
+  probing
+  representation
+  syzygy_position_processor_enum
+  syzygy_position_processor_factory_type
+  syzygy_position_processor_type
+)
+
+add_executable(test_cube_list_main
+  test_cube_list_main.cpp
+)
+target_link_libraries(test_cube_list_main
+  load_and_save
+  parallel_for_each
+)
+
+add_executable(test_decision_dag_main
+  test_decision_dag_main.cpp
+)
+target_link_libraries(test_decision_dag_main
+  load_and_save
+  parallel_for_each
+)
+
+add_executable(test_decision_dag_usage_main
+  test_decision_dag_usage_main.cpp
+)
+target_link_libraries(test_decision_dag_usage_main
+  cube_binary_inputs
+  load_and_save
+  parallel_for_each
+)
+
+add_executable(test_indexed_cube_list_main
+  test_indexed_cube_list_main.cpp
+)
+target_link_libraries(test_indexed_cube_list_main
+  cube_list
+  indexed_cube_list
+  parallel_for_each
+)
+
+add_executable(test_indexed_cube_list_rigorous_main
+  test_indexed_cube_list_rigorous_main.cpp
+)
+target_link_libraries(test_indexed_cube_list_rigorous_main
+  indexed_cube_list
+  load_and_save
+  parallel_for_each
+)
+
+add_executable(verify_equivalence_main
+  verify_equivalence_main.cpp
+  verify_equivalence_main.hpp
+)
+target_link_libraries(verify_equivalence_main
+  cube_list
+  data_category_enum
+  indexed_cube_list
+  verify_equivalence
+)
+
+add_executable(egt_comparison_tests
+  atomic_stuff_test.cpp
+  atomic_stuff_test.hpp
+  bdd_endgame_table_type_test.cpp
+  bdd_endgame_table_type_test.hpp
+  bit_array_display_test.cpp
+  bit_array_display_test.hpp
+  bit_region_schema_type_test.cpp
+  bit_region_schema_type_test.hpp
+  bit_region_type_test.cpp
+  bit_region_type_test.hpp
+  bit_region_uint_operators_test.cpp
+  bit_region_uint_operators_test.hpp
+  bit_stuff_test.cpp
+  bit_stuff_test.hpp
+  chesspresso_endgame_table_type_test.cpp
+  chesspresso_endgame_table_type_test.hpp
+  chesspresso_probe_timing_epd_parsing_test.cpp
+  chesspresso_probe_timing_epd_parsing_test.hpp
+  const_memory_stream_buffer_view_type_test.cpp
+  const_memory_stream_buffer_view_type_test.hpp
+  cube_binary_inputs_test.cpp
+  cube_binary_inputs_test.hpp
+  cube_list_endgame_table_type_test.cpp
+  cube_list_endgame_table_type_test.hpp
+  cube_list_test.cpp
+  cube_list_test.hpp
+  cube_test.cpp
+  cube_test.hpp
+  decision_dag_endgame_table_type_test.cpp
+  decision_dag_endgame_table_type_test.hpp
+  default_init_type_test.cpp
+  default_init_type_test.hpp
+  distance_d_merging_test.cpp
+  distance_d_merging_test.hpp
+  endgame_tables_type_test.cpp
+  endgame_tables_type_test.hpp
+  execution_measurement_test.cpp
+  execution_measurement_test.hpp
+  expand_randomly_test.cpp
+  expand_randomly_test.hpp
+  filesystem_stuff_test.cpp
+  filesystem_stuff_test.hpp
+  generic_probe_timing_test.cpp
+  generic_probe_timing_test.hpp
+  hex_display_test.cpp
+  hex_display_test.hpp
+  indexed_cube_list_endgame_table_type_test.cpp
+  indexed_cube_list_endgame_table_type_test.hpp
+  indexed_cube_list_test.cpp
+  indexed_cube_list_test.hpp
+  irreduce_algorithm_test.cpp
+  irreduce_algorithm_test.hpp
+  load_and_save_test.cpp
+  load_and_save_test.hpp
+  logic_digit_enum_test.cpp
+  logic_digit_enum_test.hpp
+  memory_information_snapshot_type_test.cpp
+  memory_information_snapshot_type_test.hpp
+  memory_information_snapshotter_type_test.cpp
+  memory_information_snapshotter_type_test.hpp
+  memory_mapped_file_type_test.cpp
+  memory_mapped_file_type_test.hpp
+  minimization_cycle_test.cpp
+  minimization_cycle_test.hpp
+  mutable_memory_stream_buffer_view_type_test.cpp
+  mutable_memory_stream_buffer_view_type_test.hpp
+  output_counting_only_stream_buffer_type_test.cpp
+  output_counting_only_stream_buffer_type_test.hpp
+  parallel_for_each_test.cpp
+  parallel_for_each_test.hpp
+  paths_test.cpp
+  paths_test.hpp
+  position_sampling_type_test.cpp
+  position_sampling_type_test.hpp
+  primitive_text_operations_test.cpp
+  primitive_text_operations_test.hpp
+  probe_report_counters_type_test.cpp
+  probe_report_counters_type_test.hpp
+  probe_report_nybble_endgame_table_type_test.cpp
+  probe_report_nybble_endgame_table_type_test.hpp
+  probe_timing_epd_parsing_test.cpp
+  probe_timing_epd_parsing_test.hpp
+  probe_timing_test.cpp
+  probe_timing_test.hpp
+  query_egt_test.cpp
+  query_egt_test.hpp
+  synchronized_shuffle_test.cpp
+  synchronized_shuffle_test.hpp
+  syzygy_probe_timing_test.cpp
+  syzygy_probe_timing_test.hpp
+  unxz_test.cpp
+  unxz_test.hpp
+)
+target_link_libraries(egt_comparison_tests
+  gtest_main
+  atomic_stuff
+  bdd_endgame_table_parameterized_testing_type
+  bdd_endgame_table_type
+  bit_array_display
+  bit_region_schema_type
+  bit_region_type
+  bit_region_uint_operators
+  bit_stuff
+  chesspresso_endgame_table_parameterized_testing_type
+  chesspresso_endgame_table_type
+  chesspresso_probe_timing_epd_parsing
+  cube_binary_inputs
+  cube_list_endgame_table_parameterized_testing_type
+  cube_list_endgame_table_type
+  cube_list
+  decision_dag_endgame_table_parameterized_testing_type
+  decision_dag_endgame_table_type
+  distance_d_merging
+  egt_format_type
+  endgame_tables_type
+  environment_variable_access
+  execution_measurement
+  expand_randomly
+  expand_randomly_parameterized_testing_type
+  filesystem_stuff
+  generic_probe_timing
+  indexed_cube_list
+  indexed_cube_list_endgame_table_type
+  irreduce_algorithm
+  load_and_save
+  logic_digit_enum
+  look_up_parameterized_testing_type
+  memory_information_snapshot_type
+  memory_information_snapshotter_type
+  memory_mapped_file_type
+  minimization_cycle
+  minimization_cycle_parameterized_testing_type
+  parallel_for_each
+  paths
+  position_sampling_type
+  primitive_text_operations
+  probe_report_counters_type
+  probe_report_nybble_endgame_table_parameterized_testing_type
+  probe_report_nybble_endgame_table_type
+  probe_timing
+  probe_timing_epd_parsing
+  query_egt
+  representation
+  synchronized_shuffle
+  syzygy_probe_timing
+  unxz
+  verify_equivalence
+)
+gtest_discover_tests(egt_comparison_tests)

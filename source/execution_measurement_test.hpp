@@ -1,0 +1,9 @@
+#if !defined(EGT_COMPARISON_EXECUTION_MEASUREMENT_TEST_HPP)
+#define EGT_COMPARISON_EXECUTION_MEASUREMENT_TEST_HPP
+
+
+#include "gtest/gtest.h"
+#include "execution_measurement.hpp"
+
+
+#endif // EGT_COMPARISON_EXECUTION_MEASUREMENT_TEST_HPP

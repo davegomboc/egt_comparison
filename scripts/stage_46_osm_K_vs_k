@@ -1,0 +1,4 @@
+#!/bin/bash
+./osm 2 K_vs_k 01L 4194304
+./osm 2 K_vs_k 02L 4194304
+./osm 2 K_vs_k 03L 4194304

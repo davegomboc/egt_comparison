@@ -1,0 +1,20 @@
+#!/bin/bash
+./reduce 4 KQ_vs_kq 09L+X+I 09L+Q 4194304
+./reduce 4 KQ_vs_kr 09L+X+I 09L+Q 4194304
+./reduce 4 KQ_vs_kb 09L+X+I 09L+Q 4194304
+./reduce 4 KQ_vs_kn 09L+X+I 09L+Q 4194304
+./reduce 4 KQ_vs_kp 09L+X+I 09L+Q 4194304
+
+./reduce 4 KR_vs_kr 09L+X+I 09L+Q 4194304
+./reduce 4 KR_vs_kb 09L+X+I 09L+Q 4194304
+./reduce 4 KR_vs_kn 09L+X+I 09L+Q 4194304
+./reduce 4 KR_vs_kp 09L+X+I 09L+Q 4194304
+
+./reduce 4 KB_vs_kb 09L+X+I 09L+Q 4194304
+./reduce 4 KB_vs_kn 09L+X+I 09L+Q 4194304
+./reduce 4 KB_vs_kp 09L+X+I 09L+Q 4194304
+
+./reduce 4 KN_vs_kn 09L+X+I 09L+Q 4194304
+./reduce 4 KN_vs_kp 09L+X+I 09L+Q 4194304
+
+./reduce 4 KP_vs_kp 09L+X+I 09L+Q 4194304

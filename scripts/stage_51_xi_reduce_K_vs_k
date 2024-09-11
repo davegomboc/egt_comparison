@@ -1,0 +1,4 @@
+#!/bin/bash
+./reduce 2 K_vs_k 01L+X+I 01L+Q 4194304
+./reduce 2 K_vs_k 02L+X+I 02L+Q 4194304
+./reduce 2 K_vs_k 03L+X+I 03L+Q 4194304

@@ -1,0 +1,20 @@
+#!/bin/bash
+./dtrize 4 KQQ_vs_k 2097152
+./dtrize 4 KQR_vs_k 2097152
+./dtrize 4 KQB_vs_k 2097152
+./dtrize 4 KQN_vs_k 2097152
+./dtrize 4 KQP_vs_k 2097152
+
+./dtrize 4 KRR_vs_k 2097152
+./dtrize 4 KRB_vs_k 2097152
+./dtrize 4 KRN_vs_k 2097152
+./dtrize 4 KRP_vs_k 2097152
+
+./dtrize 4 KBB_vs_k 2097152
+./dtrize 4 KBN_vs_k 2097152
+./dtrize 4 KBP_vs_k 2097152
+
+./dtrize 4 KNN_vs_k 2097152
+./dtrize 4 KNP_vs_k 2097152
+
+./dtrize 4 KPP_vs_k 2097152

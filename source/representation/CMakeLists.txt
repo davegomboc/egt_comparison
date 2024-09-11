@@ -1,0 +1,133 @@
+add_library(representation
+  board_8x8_type.cpp
+  board_8x8_type.hpp
+  bitboard_type.cpp
+  bitboard_type.hpp
+  bitboards_type.cpp
+  bitboards_type.hpp
+  canonicalization_enum.cpp
+  canonicalization_enum.hpp
+  coordinate_enum.cpp
+  coordinate_enum.hpp
+  coordinate_type.cpp
+  coordinate_type.hpp
+  coordinates_type.cpp
+  coordinates_type.hpp
+  cover_enum.cpp
+  cover_enum.hpp
+  cover_type.cpp
+  cover_type.hpp
+  cube_schema_type.cpp
+  cube_schema_type.hpp
+  cube_type.cpp
+  cube_type.hpp
+  egt_position_type.cpp
+  egt_position_type.hpp
+  en_passant_information_type.cpp
+  en_passant_information_type.hpp
+  enumerated_material_signatures_type.cpp
+  enumerated_material_signatures_type.hpp
+  figurine_colour_enum.cpp
+  figurine_colour_enum.hpp
+  figurine_colour_type.cpp
+  figurine_colour_type.hpp
+  figurine_enum.cpp
+  figurine_enum.hpp
+  figurine_placement_type.cpp
+  figurine_placement_type.hpp
+  figurine_placements_type.cpp
+  figurine_placements_type.hpp
+  figurine_shape_enum.cpp
+  figurine_shape_enum.hpp
+  figurine_shape_type.cpp
+  figurine_shape_type.hpp
+  figurine_shapes_type.cpp
+  figurine_shapes_type.hpp
+  figurine_type.cpp
+  figurine_type.hpp
+  figurines_type.cpp
+  figurines_type.hpp
+  logic_digit_type.cpp
+  logic_digit_type.hpp
+  logic_digits_type.cpp
+  logic_digits_type.hpp
+  material_side_type.cpp
+  material_side_type.hpp
+  material_signature_type.cpp
+  material_signature_type.hpp
+  perspective_enum.cpp
+  perspective_enum.hpp
+)
+target_link_libraries(representation
+  extended_position_description_type
+  board_contents_type
+  castling_rights_type
+  en_passant_target_type
+  logic_digit_enum
+  probing
+  probe_report_type
+  side_to_move_type
+)
+
+add_executable(examine_representation_in_gdb_main
+  examine_representation_in_gdb_main.cpp
+)
+target_link_libraries(examine_representation_in_gdb_main
+  representation
+)
+
+add_executable(representation_tests
+  bitboard_type_test.cpp
+  bitboard_type_test.hpp
+  board_8x8_type_test.cpp
+  board_8x8_type_test.hpp
+  coordinate_enum_test.cpp
+  coordinate_enum_test.hpp
+  coordinate_type_test.cpp
+  coordinate_type_test.hpp
+  coordinates_type_test.cpp
+  coordinates_type_test.hpp
+  cover_type_test.cpp
+  cover_type_test.hpp
+  cube_type_test.cpp
+  cube_type_test.hpp
+  egt_position_type_test.cpp
+  egt_position_type_test.hpp
+  enumerated_material_signatures_type_test.cpp
+  enumerated_material_signatures_type_test.hpp
+  figurine_colour_enum_test.cpp
+  figurine_colour_enum_test.hpp
+  figurine_colour_type_test.cpp
+  figurine_colour_type_test.hpp
+  figurine_enum_test.cpp
+  figurine_enum_test.hpp
+  figurine_shape_enum_test.cpp
+  figurine_shape_enum_test.hpp
+  figurine_shape_type_test.cpp
+  figurine_shape_type_test.hpp
+  figurine_shapes_type_test.cpp
+  figurine_shapes_type_test.hpp
+  figurine_type_test.cpp
+  figurine_type_test.hpp
+  figurines_type_test.cpp
+  figurines_type_test.hpp
+  figurine_placement_type_test.cpp
+  figurine_placement_type_test.hpp
+  figurine_placements_type_test.cpp
+  figurine_placements_type_test.hpp
+  logic_digit_type_test.cpp
+  logic_digit_type_test.hpp
+  logic_digits_type_test.cpp
+  logic_digits_type_test.hpp
+  material_side_type_test.cpp
+  material_side_type_test.hpp
+  material_signature_type_test.cpp
+  material_signature_type_test.hpp
+)
+
+target_link_libraries(representation_tests
+  representation
+  gtest_main
+)
+
+gtest_discover_tests(representation_tests)

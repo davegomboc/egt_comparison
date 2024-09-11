@@ -1,0 +1,6 @@
+#!/bin/bash
+./dump_syzygy 3 KQ_vs_k 2097152
+./dump_syzygy 3 KR_vs_k 2097152
+./dump_syzygy 3 KB_vs_k 2097152
+./dump_syzygy 3 KN_vs_k 2097152
+./dump_syzygy 3 KP_vs_k 2097152

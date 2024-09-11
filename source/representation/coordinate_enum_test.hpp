@@ -1,0 +1,9 @@
+#if !defined(EGT_COMPARISON_REPRESENTATION_COORDINATE_ENUM_TEST_HPP)
+#define EGT_COMPARISON_REPRESENTATION_COORDINATE_ENUM_TEST_HPP
+
+
+#include "gtest/gtest.h"
+#include "representation/coordinate_enum.hpp"
+
+
+#endif // EGT_COMPARISON_REPRESENTATION_COORDINATE_ENUM_TEST_HPP
